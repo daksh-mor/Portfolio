@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daksh Mor - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">DM</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Daksh Mor</h1>
+                <h2>Computer Science and Engineering Student</h2>
+                <p>IIT (ISM) Dhanbad | ML Enthusiast | Programmer</p>
+                <div class="hero-links">
+                    <a href="mailto:daksh3982@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Contact Me</a>
+                    <a href="#projects" class="btn btn-secondary"><i class="fas fa-code"></i> View Projects</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/daksh-mor" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/" target="_blank"><i class="fab fa-kaggle"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Indian Institute of Technology (Indian School of Mines), Dhanbad</h3>
+                        <h4>Bachelor of Technology in Computer Science and Engineering</h4>
+                        <p class="timeline-period">2023 - 2027 (Expected)</p>
+                        <p class="timeline-location">Dhanbad, India</p>
+                        <p class="timeline-gpa">CGPA: 9.05 / 10</p>
+                        <div class="timeline-details">
+                            <h5>Relevant Coursework:</h5>
+                            <p>Data Structures, Probability and Statistics, Algorithm Design and Analysis, Linear Algebra, Vector Calculus, OOPs, Discrete Mathematics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Skin Cancer Detection System</h3>
+                        <div class="project-tags">
+                            <span>PyTorch</span>
+                            <span>LightGBM</span>
+                            <span>Scikit-Learn</span>
+                            <span>Optuna</span>
+                        </div>
+                        <p>Developed a multi-modal ensemble by stacking CNN outputs (EfficientNet, ResNet, DenseNet) with LightGBM for the ISIC 2024 Challenge, improving classification performance on imbalanced lesion datasets.</p>
+                        <p>Engineered a robust Triple K-Fold CV strategy to handle severe class imbalance, ensuring stable and reliable AUC-ROC evaluation across folds.</p>
+                        <p>Achieved top 9% rank with a pAUC (80% specificity) score of 0.18512 on the public dataset and 0.16904 on the private dataset, through 75+ submissions experimenting with hyperparameters and ensemble strategies.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>AI-Driven OCR for Historical Spanish Manuscripts</h3>
+                        <div class="project-tags">
+                            <span>PyTorch</span>
+                            <span>Transformers (TrOCR, T5)</span>
+                        </div>
+                        <p>Engineered a synthetic printed-text data pipeline to bypass domain mismatch in historical Spanish OCR, reducing initial WER from 0.4 to 0.3.</p>
+                        <p>Fine-tuned TrOCR-Large-Spanish on synthetic data using character-level augmentations & frozen LayerNorms, adapting to historical text variations and reducing WER from 0.277 to 0.24.</p>
+                        <p>Implemented T5-based post-processing to correct OCR output errors, resulting in a final WER reduction from 0.24 to 0.207.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Dream Team Prediction for Fantasy Cricket using Machine Learning</h3>
+                        <div class="project-tags">
+                            <span>Transformers</span>
+                            <span>SHAP</span>
+                            <span>GPT API</span>
+                            <span>Streamlit</span>
+                        </div>
+                        <p>Benchmarked models (LightGBM, XGBoost, LSTMs, Transformers), selecting an optimal LGBM+XGBoost hybrid; engineered features including novel Transformer embeddings achieving 30 MAE per player.</p>
+                        <p>Implemented SHAP for model explainability and integrated GPT-4 API via dynamic prompting to generate automated, user-friendly performance insights.</p>
+                        <p>Developed an end-to-end pipeline automating data collection, processing, training, and Dream Team optimization, enabling rapid (&lt;3s) team generation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">C/C++</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning & Data Science</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">Hugging Face</span>
+                        <span class="skill-item">LangChain</span>
+                        <span class="skill-item">Transformers</span>
+                        <span class="skill-item">Scikit-learn</span>
+                        <span class="skill-item">LightGBM</span>
+                        <span class="skill-item">XGBoost</span>
+                        <span class="skill-item">Optuna</span>
+                        <span class="skill-item">NumPy</span>
+                        <span class="skill-item">Pandas</span>
+                        <span class="skill-item">Matplotlib</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools, Platforms & APIs</h3>
+                    <div class="skill-items">
+                        <span class="skill-item">Git</span>
+                        <span class="skill-item">GitHub</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">VS Code</span>
+                        <span class="skill-item">FastAPI</span>
+                        <span class="skill-item">Streamlit</span>
+                        <span class="skill-item">Kaggle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <i class="fas fa-medal"></i>
+                    <p>Bronze Medal (Top 9%) in ISIC 2024 Computer Vision Competition (2739 teams) on Kaggle.</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-trophy"></i>
+                    <p>Ranked 1st in Cosmolligence 2.0 Machine Learning Challenge (IIT Dhanbad).</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-award"></i>
+                    <p>Ranked 3rd in AI of GOD 3.0 Machine Learning Challenge (IIT Dhanbad).</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-code"></i>
+                    <p>Solved 400+ coding problems across platforms (Rating: Codeforces 1419+).</p>
+                </div>
+                <div class="achievement-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <p>JEE Advanced 2023: All India Rank 2877 (AIR).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="social" class="section social">
+        <div class="container">
+            <h2 class="section-title">Social Engagements</h2>
+            <div class="social-engagements">
+                <div class="social-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3>Core Member, ML Division, CyberLabs</h3>
+                        <p>Organized workshops engaging 500+ students.</p>
+                    </div>
+                </div>
+                <div class="social-item">
+                    <i class="fas fa-calendar-check"></i>
+                    <div>
+                        <h3>Lead Organizer, Srijan Cultural Fest</h3>
+                        <p>Managed event logistics for 1,000+ participants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>daksh3982@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91-9350114220</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-id-card"></i>
+                    <p>Adm. No. 23JE0286</p>
+                </div>
+            </div>
+            <div class="contact-social">
+                <a href="https://www.linkedin.com/in/daksh-mor" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/" target="_blank"><i class="fab fa-kaggle"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Daksh Mor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
