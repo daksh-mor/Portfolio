@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="particles"></div>
     <nav>
         <div class="container">
             <div class="logo">DM</div>
@@ -18,6 +19,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -31,6 +33,7 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
+                <img src="https://via.placeholder.com/180x180.png?text=Daksh+Mor" alt="Daksh Mor" class="profile-image">
                 <h1>Daksh Mor</h1>
                 <h2>Computer Science and Engineering Student</h2>
                 <p>IIT (ISM) Dhanbad | ML Enthusiast | Programmer</p>
@@ -40,8 +43,8 @@
                 </div>
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/daksh-mor" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.kaggle.com/" target="_blank"><i class="fab fa-kaggle"></i></a>
+                    <a href="https://github.com/daksh-mor" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.kaggle.com/dakshmor" target="_blank"><i class="fab fa-kaggle"></i></a>
                 </div>
             </div>
         </div>
@@ -73,6 +76,12 @@
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Skin+Cancer+Detection" alt="Skin Cancer Detection System">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/skin-cancer-detection" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
                     <div class="project-content">
                         <h3>Skin Cancer Detection System</h3>
                         <div class="project-tags">
@@ -88,30 +97,146 @@
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=AI-Driven+OCR" alt="Historical Spanish Text Recognition">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/historical-spanish-ocr" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>AI-Driven OCR for Historical Spanish Manuscripts</h3>
+                        <h3>Historical Spanish Text Recognition</h3>
                         <div class="project-tags">
                             <span>PyTorch</span>
-                            <span>Transformers (TrOCR, T5)</span>
+                            <span>OCR</span>
+                            <span>BERT</span>
+                            <span>TrOCR</span>
+                            <span>CNN-RNN</span>
+                            <span>Transformers</span>
                         </div>
-                        <p>Engineered a synthetic printed-text data pipeline to bypass domain mismatch in historical Spanish OCR, reducing initial WER from 0.4 to 0.3.</p>
-                        <p>Fine-tuned TrOCR-Large-Spanish on synthetic data using character-level augmentations & frozen LayerNorms, adapting to historical text variations and reducing WER from 0.277 to 0.24.</p>
-                        <p>Implemented T5-based post-processing to correct OCR output errors, resulting in a final WER reduction from 0.24 to 0.207.</p>
+                        <p>Developed a synthetic data pipeline and fine-tuned TrOCR-Spanish with frozen LayerNorms for historical text recognition.</p>
+                        <p>Explored CNN-RNN, Hybrid Transformer models (CNN-TF, VIT-RNN), and applied linguistic post-processing for OCR refinement.</p>
+                        <p>Used a BERT-based language model for contextual correction, improving BLEU and WER scores.</p>
                     </div>
                 </div>
 
                 <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Cricket+Fantasy+Prediction" alt="Cricket Fantasy Prediction System">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/cricket-fantasy-prediction" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
                     <div class="project-content">
-                        <h3>Dream Team Prediction for Fantasy Cricket using Machine Learning</h3>
+                        <h3>Cricket Fantasy Prediction System</h3>
                         <div class="project-tags">
+                            <span>Python</span>
                             <span>Transformers</span>
                             <span>SHAP</span>
-                            <span>GPT API</span>
-                            <span>Streamlit</span>
+                            <span>GPT-4 API</span>
                         </div>
-                        <p>Benchmarked models (LightGBM, XGBoost, LSTMs, Transformers), selecting an optimal LGBM+XGBoost hybrid; engineered features including novel Transformer embeddings achieving 30 MAE per player.</p>
-                        <p>Implemented SHAP for model explainability and integrated GPT-4 API via dynamic prompting to generate automated, user-friendly performance insights.</p>
-                        <p>Developed an end-to-end pipeline automating data collection, processing, training, and Dream Team optimization, enabling rapid (&lt;3s) team generation.</p>
+                        <p>Benchmarked LightGBM, XGBoost, LSTMs, and Transformer Encoders for Dream11 fantasy point prediction.</p>
+                        <p>Engineered model-specific features, including exponentially weighted averages, opponent-based stats, and contextual player embeddings, boosting accuracy by 27%.</p>
+                        <p>Integrated SHAP explainability with GPT-4 API for automated, user-friendly performance insights.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Urban+Biodiversity+Analyzer" alt="AI-Powered Urban Biodiversity Analyzer">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/urban-biodiversity" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>AI-Powered Urban Biodiversity Analyzer</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>QGIS</span>
+                            <span>Geopandas</span>
+                            <span>Transformers</span>
+                        </div>
+                        <p>Built a GIS-integrated ML system with 85% accuracy for urban impact prediction using QGIS & Geopandas.</p>
+                        <p>Generated a novel dataset via AI and unsupervised learning due to a lack of existing data.</p>
+                        <p>Optimized web-based mapping and integrated an AI chatbot with Chain-of-Thought & ReAct prompting.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Flood+Segmentation" alt="Flood Segmentation from Satellite Imagery">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/flood-segmentation" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Flood Segmentation from Satellite Imagery</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>UNet Variants</span>
+                        </div>
+                        <p>Evaluated ResUNet, Attention UNet, and UNet with ResNet, EfficientNet, and DenseNet encoders.</p>
+                        <p>Won 1st place in the competition, with ResUNet achieving 0.80 IoU.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=ML+Foundation+Library" alt="ML Foundation Library">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/ml-foundation" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>ML Foundation Library</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>NumPy</span>
+                            <span>Pandas</span>
+                            <span>Matplotlib</span>
+                            <span>PyTorch</span>
+                        </div>
+                        <p>Implemented core ML algorithms, including Linear/Logistic Regression, KNN, K-Means, and Neural Networks from scratch using NumPy.</p>
+                        <p>Built and trained the original Transformer model in PyTorch for English-to-French translation, showcasing sequence-to-sequence learning.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Biology+RAG+System" alt="Biology-Focused RAG System">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/bio-rag" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Biology-Focused RAG System</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>LangChain</span>
+                            <span>FAISS</span>
+                            <span>HuggingFace</span>
+                        </div>
+                        <p>Developed a domain-specific RAG system for biological QA using LangChain, FAISS, and HuggingFace.</p>
+                        <p>Optimized passage embedding and indexing for precise retrieval and contextual accuracy.</p>
+                        <p>Integrated Google Gemini-Pro for enhanced response generation.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/350x180.png?text=Discord+Bot" alt="Community Engagement Discord Bot">
+                        <div class="project-links">
+                            <a href="https://github.com/daksh-mor/discord-bot" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Community Engagement Discord Bot</h3>
+                        <div class="project-tags">
+                            <span>Python</span>
+                            <span>Discord.py</span>
+                        </div>
+                        <p>Built a bot to track interactions and manage a thanking system for doubt helping server.</p>
+                        <p>Added a leaderboard and admin tools for better moderation.</p>
                     </div>
                 </div>
             </div>
@@ -133,6 +258,7 @@
                     <h3>Machine Learning & Data Science</h3>
                     <div class="skill-items">
                         <span class="skill-item">PyTorch</span>
+                        <span class="skill-item">TensorFlow</span>
                         <span class="skill-item">Hugging Face</span>
                         <span class="skill-item">LangChain</span>
                         <span class="skill-item">Transformers</span>
@@ -143,6 +269,7 @@
                         <span class="skill-item">NumPy</span>
                         <span class="skill-item">Pandas</span>
                         <span class="skill-item">Matplotlib</span>
+                        <span class="skill-item">OpenCV</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -152,6 +279,7 @@
                         <span class="skill-item">GitHub</span>
                         <span class="skill-item">Docker</span>
                         <span class="skill-item">VS Code</span>
+                        <span class="skill-item">QGIS</span>
                         <span class="skill-item">FastAPI</span>
                         <span class="skill-item">Streamlit</span>
                         <span class="skill-item">Kaggle</span>
@@ -189,6 +317,42 @@
         </div>
     </section>
     
+    <section id="certifications" class="section certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Courses</h2>
+            <div class="certifications-list">
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h3>Machine Learning Specialization by Andrew Ng</h3>
+                        <p>Coursera</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h3>Deep Neural Networks and CNN by Andrew Ng</h3>
+                        <p>Coursera</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h3>CS231n: Convolutional Neural Networks for Visual Recognition</h3>
+                        <p>Stanford University</p>
+                    </div>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h3>mlcourse.ai</h3>
+                        <p>Open Data Science</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="social" class="section social">
         <div class="container">
             <h2 class="section-title">Social Engagements</h2>
@@ -203,7 +367,7 @@
                 <div class="social-item">
                     <i class="fas fa-calendar-check"></i>
                     <div>
-                        <h3>Lead Organizer, Srijan Cultural Fest</h3>
+                        <h3>Lead Volunteer, Srijan Cultural Fest</h3>
                         <p>Managed event logistics for 1,000+ participants.</p>
                     </div>
                 </div>
@@ -230,8 +394,8 @@
             </div>
             <div class="contact-social">
                 <a href="https://www.linkedin.com/in/daksh-mor" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.kaggle.com/" target="_blank"><i class="fab fa-kaggle"></i></a>
+                <a href="https://github.com/daksh-mor" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.kaggle.com/dakshmor" target="_blank"><i class="fab fa-kaggle"></i></a>
             </div>
         </div>
     </section>
