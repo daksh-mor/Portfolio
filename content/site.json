@@ -1,0 +1,87 @@
+{
+  "site": {
+    "title": "Daksh Mor",
+    "logo": "Dm",
+    "resume": "https://drive.google.com/file/d/1UJllOd3woT7XdmimzgI_BjWQQdx-HmWH/view?usp=sharing",
+    "resumeBackup": "resume.pdf"
+  },
+  "home": {
+    "lastName": "Mor",
+    "bio": [
+      "I'm working on building something of my own where Machine Learning meets products that solve real problems and feel effortless to use. I care deeply about the details: how something looks, how it feels, how little it asks of the user. Good systems and **good design**, to me, are inseparable.",
+      "",
+      "Most recently, I built WhiteBox, an AI system designed to act as a financial junior analyst, giving investors everything they need before making a decision: fundamentals, market data, sentiment, and news, all in real-time, orchestrated through specialized sub-agents. It placed 5th at Inter IIT Tech Meet 14.0. I also contributed to **GSoC** 2025 under ML4SCI, submitting a NeurIPS workshop paper as part of the work. As a Research Intern at **NUS**, I explored mechanistic interpretability in LLMs, proposing a novel gradient ascent based approach in sparse autoencoders to extract monosemantic features.",
+      "",
+      "I'm a CSE undergraduate at IIT Dhanbad '27. In the long term, I aim to become an exceptional **ML engineer** and eventually build something of my own. If something meaningful is in the works, I'd love to connect."
+    ],
+    "tagline": "Simple, not naive",
+    "profileImage": "profile.jpg?v=20260411",
+    "profileImageDark": "profile.jpg?v=20260411",
+    "profileAlt": "Daksh Mor profile photo"
+  },
+  "social": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/daksh-mor",
+      "icon": "github"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/daksh-mor",
+      "icon": "linkedin"
+    },
+    {
+      "name": "Medium",
+      "url": "https://medium.com/@daksh3982",
+      "icon": "medium"
+    },
+    {
+      "name": "Kaggle",
+      "url": "https://www.kaggle.com/dakshmor",
+      "icon": "kaggle"
+    },
+    {
+      "name": "Codeforces",
+      "url": "https://codeforces.com/profile/Daksh_Mor",
+      "icon": "codeforces"
+    },
+    {
+      "name": "LeetCode",
+      "url": "https://leetcode.com/u/daksh3982/",
+      "icon": "leetcode"
+    },
+    {
+      "name": "X",
+      "url": "https://x.com/whiteboxengine",
+      "icon": "x"
+    }
+  ],
+  "contact": {
+    "email": "daksh3982@gmail.com",
+    "darkEmail": "daksh3982@gmail.com"
+  },
+  "projectsPage": {
+    "title": "Projects"
+  },
+  "projects": [
+    {
+      "id": "alpha",
+      "title": "WhiteBox – AI junior analyst for equity market",
+      "description": "Agentic AI financial analyst that unifies news, filings, and sentiment into a shared memory, runs multi-agent debate to surface hidden contradictions, and delivers insights in ~90 seconds at ~3¢ (10× faster, 700× cheaper). Supports natural-language strategy input with instant backtesting on live market data.",
+      "image": "content/project-images/project-alpha.jpg",
+      "imageAlt": "Project Alpha",
+      "linkLabel": "View Project",
+      "link": "https://github.com/whintyr/whitebox"
+    },
+    {
+      "id": "beta",
+      "title": "ISIC 2024 - Skin Cancer Detection",
+      "description": "Skin cancer detection from smartphone-quality lesion images. Fine-tuned DINOv2 on the ISIC 2024 dataset, handling class imbalance and optimizing for partial AUC.",
+      "image": "content/project-images/project-beta.jpg",
+      "imageAlt": "Project Beta",
+      "linkLabel": "View Project",
+      "link": "https://github.com/daksh-mor/ISIC2024"
+    }
+  ]
+}
+
