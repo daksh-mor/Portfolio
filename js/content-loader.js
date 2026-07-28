@@ -135,20 +135,92 @@
             return;
         }
 
+        list.classList.add("timeline-road");
         list.innerHTML = "";
+
+        var currentYear = null;
+        var itemIndex = 0;
+
         projects.forEach(function (project) {
-            var card = document.createElement("div");
-            card.className = "project-card";
+            // Insert Year Milestone Banner when Year changes
+            var itemYear = project.year || (project.date ? project.date.split(" ")[1] : null);
+            if (itemYear && itemYear !== currentYear) {
+                currentYear = itemYear;
+                var yearBanner = document.createElement("div");
+                yearBanner.className = "timeline-year-banner";
+                yearBanner.setAttribute("data-year", currentYear);
+                yearBanner.innerHTML = '<span class="year-pill">' + currentYear + '</span>';
+                list.appendChild(yearBanner);
+                itemIndex = 0; // Reset alternating side per year group
+            }
+
+            var item = document.createElement("div");
+            var sideClass = (itemIndex % 2 === 0) ? "timeline-item-left" : "timeline-item-right";
+            item.className = "timeline-item " + sideClass;
+            itemIndex++;
+
             if (project.id) {
-                card.id = project.id;
+                item.id = project.id;
+            }
+            if (project.category) {
+                item.setAttribute("data-category", project.category);
+            }
+            if (project.year) {
+                item.setAttribute("data-year", project.year);
+            }
+
+            var marker = document.createElement("div");
+            marker.className = "timeline-marker";
+
+            if (project.date) {
+                var dateBadge = document.createElement("span");
+                dateBadge.className = "project-date timeline-left-date";
+                dateBadge.textContent = project.date;
+                marker.appendChild(dateBadge);
+            }
+
+            var dot = document.createElement("span");
+            dot.className = "timeline-dot";
+            marker.appendChild(dot);
+
+            var card = document.createElement("div");
+            card.className = "project-card timeline-card";
+
+            if (project.categoryLabel) {
+                var catBadge = document.createElement("span");
+                catBadge.className = "project-category-badge " + (project.category || "");
+                catBadge.textContent = project.categoryLabel;
+                card.appendChild(catBadge);
+            }
+
+            var headerMeta = document.createElement("div");
+            headerMeta.className = "project-header-meta";
+
+            if (Array.isArray(project.tags) && project.tags.length > 0) {
+                var tagsWrap = document.createElement("div");
+                tagsWrap.className = "project-tags";
+                project.tags.forEach(function (tagText) {
+                    var tag = document.createElement("span");
+                    tag.className = "project-tag";
+                    tag.textContent = tagText;
+                    tagsWrap.appendChild(tag);
+                });
+                headerMeta.appendChild(tagsWrap);
             }
 
             var imageWrap = document.createElement("div");
             imageWrap.className = "project-image";
 
             var image = document.createElement("img");
-            image.src = project.image || "https://via.placeholder.com/400x250/f0f0f0/333?text=Project";
+            image.src = project.image || "content/project-images/placeholder.jpg";
             image.alt = project.imageAlt || project.title || "Project";
+            image.onerror = function() {
+                this.onerror = null;
+                this.style.display = "none";
+                imageWrap.classList.add("image-placeholder-fallback");
+                imageWrap.innerHTML = '<div class="fallback-graphic"><span class="fallback-icon">✦</span></div>';
+            };
+
             imageWrap.appendChild(image);
 
             var info = document.createElement("div");
@@ -162,20 +234,93 @@
             description.className = "project-description";
             description.innerHTML = formatInlineMarkdown(project.description || "Project description.");
 
-            var link = document.createElement("a");
-            link.className = "view-project";
-            link.href = project.link || "#";
-            link.target = "_blank";
-            link.rel = "noreferrer";
-            link.textContent = (project.linkLabel || "View Project") + " ->";
+            var linksWrap = document.createElement("div");
+            linksWrap.className = "project-links";
 
+            if (project.link) {
+                var link = document.createElement("a");
+                link.className = "view-project btn-link";
+                link.href = project.link;
+                link.target = "_blank";
+                link.rel = "noreferrer";
+                link.innerHTML = (project.linkLabel || "GitHub Repo") + ' <span class="arrow">↗</span>';
+                linksWrap.appendChild(link);
+            }
+
+            if (project.liveUrl) {
+                var liveLink = document.createElement("a");
+                liveLink.className = "view-project btn-link btn-link-secondary";
+                liveLink.href = project.liveUrl;
+                liveLink.target = "_blank";
+                liveLink.rel = "noreferrer";
+                liveLink.innerHTML = (project.liveLabel || 'Live Demo') + ' <span class="arrow">↗</span>';
+                linksWrap.appendChild(liveLink);
+            }
+
+            if (project.itchUrl) {
+                var itchLink = document.createElement("a");
+                itchLink.className = "view-project btn-link btn-link-secondary";
+                itchLink.href = project.itchUrl;
+                itchLink.target = "_blank";
+                itchLink.rel = "noreferrer";
+                itchLink.innerHTML = (project.itchLabel || 'itch.io') + ' <span class="arrow">↗</span>';
+                linksWrap.appendChild(itchLink);
+            }
+
+            info.appendChild(headerMeta);
             info.appendChild(title);
             info.appendChild(description);
-            info.appendChild(link);
+            info.appendChild(linksWrap);
 
             card.appendChild(imageWrap);
             card.appendChild(info);
-            list.appendChild(card);
+
+            item.appendChild(marker);
+            item.appendChild(card);
+            list.appendChild(item);
+        });
+
+        setupCategoryFilters();
+    }
+
+    function setupCategoryFilters() {
+        var buttons = document.querySelectorAll(".category-filters .filter-btn");
+        var items = document.querySelectorAll(".timeline-item");
+        var banners = document.querySelectorAll(".timeline-year-banner");
+        if (!buttons.length || !items.length) {
+            return;
+        }
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener("click", function() {
+                buttons.forEach(function(b) { b.classList.remove("active"); });
+                btn.classList.add("active");
+
+                var cat = btn.getAttribute("data-category");
+                var visibleYears = {};
+
+                items.forEach(function(item) {
+                    var itemCat = item.getAttribute("data-category");
+                    var itemYear = item.getAttribute("data-year");
+                    if (cat === "all" || itemCat === cat) {
+                        item.style.display = "flex";
+                        if (itemYear) {
+                            visibleYears[itemYear] = true;
+                        }
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+
+                banners.forEach(function(banner) {
+                    var bannerYear = banner.getAttribute("data-year");
+                    if (cat === "all" || visibleYears[bannerYear]) {
+                        banner.style.display = "flex";
+                    } else {
+                        banner.style.display = "none";
+                    }
+                });
+            });
         });
     }
 
@@ -230,7 +375,7 @@
     // Initialize theme toggle immediately so it works even if content fetch fails.
     setupThemeToggle();
 
-    fetch("content/site.json?v=20260412", { cache: "no-store" })
+    fetch("content/site.json?t=" + Date.now(), { cache: "no-store" })
         .then(function (response) {
             return response.json();
         })
@@ -263,9 +408,156 @@
                 renderProjects(data.projectsPage, data.projects);
             }
 
-            // Easter egg removed by request.
+            if (bySelector(".experience-list")) {
+                renderExperience(data.experiences);
+            }
+
+            if (bySelector(".milestones-list")) {
+                renderMilestones(data.milestones);
+            }
+
+            // Setup Floating Scroll Nav Button (Projects Section)
+            var scrollBtn = bySelector(".projects-scroll-btn");
+            if (scrollBtn) {
+                var arrowEl = scrollBtn.querySelector(".scroll-btn-arrow");
+                var textEl = scrollBtn.querySelector(".scroll-btn-text");
+
+                function updateScrollBtnState() {
+                    var scrollY = window.scrollY || window.pageYOffset;
+                    var docHeight = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+                    
+                    if (scrollY > docHeight * 0.68) {
+                        scrollBtn.classList.add("is-up");
+                        if (arrowEl) arrowEl.textContent = "↑";
+                        if (textEl) textEl.textContent = "Back to Top";
+                        scrollBtn.setAttribute("title", "Scroll to top");
+                    } else {
+                        scrollBtn.classList.remove("is-up");
+                        if (arrowEl) arrowEl.textContent = "↓";
+                        if (textEl) textEl.textContent = "Scroll Down";
+                        scrollBtn.setAttribute("title", "Scroll down timeline");
+                    }
+                }
+
+                window.addEventListener("scroll", updateScrollBtnState, { passive: true });
+                updateScrollBtnState();
+
+                scrollBtn.addEventListener("click", function () {
+                    if (scrollBtn.classList.contains("is-up")) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    } else {
+                        var targetEl = bySelector(".category-filters-bottom") || bySelector(".milestones-section");
+                        if (targetEl) {
+                            var targetY = targetEl.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - 40;
+                            window.scrollTo({ top: targetY, behavior: "smooth" });
+                        } else {
+                            window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+                        }
+                    }
+                });
+            }
         })
         .catch(function () {
             console.warn("Could not load content/site.json");
         });
+
+    function renderExperience(experiences) {
+        var wrap = bySelector(".experience-list");
+        if (!wrap || !Array.isArray(experiences)) {
+            return;
+        }
+
+        wrap.innerHTML = "";
+        experiences.forEach(function (exp) {
+            var node = document.createElement("div");
+            node.className = "exp-horizontal-node";
+
+            var circle = document.createElement("div");
+            circle.className = "exp-node-circle";
+
+            var shortCompany = exp.company;
+            if (exp.company.indexOf("National University of Singapore") !== -1) {
+                shortCompany = "NUS";
+            } else if (exp.company.indexOf("Google Summer of Code") !== -1) {
+                shortCompany = "GSoC";
+            }
+
+            var shortRole = exp.role.split("(")[0].trim();
+            if (shortRole.indexOf("Open Source Contributor") !== -1) {
+                shortRole = "Contributor";
+            }
+
+            var company = document.createElement("span");
+            company.className = "exp-node-company";
+            company.textContent = shortCompany;
+
+            var role = document.createElement("span");
+            role.className = "exp-node-role";
+            role.textContent = shortRole;
+
+            circle.appendChild(company);
+            circle.appendChild(role);
+
+            var time = document.createElement("span");
+            time.className = "exp-node-time";
+            time.textContent = exp.period;
+
+            var popover = document.createElement("div");
+            popover.className = "exp-node-popover";
+
+            var popTitle = document.createElement("div");
+            popTitle.className = "popover-title";
+            popTitle.textContent = exp.company + " — " + exp.role;
+
+            var popDesc = document.createElement("p");
+            popDesc.className = "popover-desc";
+            popDesc.textContent = exp.summary;
+
+            popover.appendChild(popTitle);
+            popover.appendChild(popDesc);
+
+            node.appendChild(circle);
+            node.appendChild(time);
+            node.appendChild(popover);
+
+            wrap.appendChild(node);
+        });
+    }
+
+    function renderMilestones(milestones) {
+        var wrap = bySelector(".milestones-list");
+        if (!wrap || !Array.isArray(milestones)) {
+            return;
+        }
+
+        wrap.innerHTML = "";
+        milestones.forEach(function (m) {
+            var item = document.createElement("div");
+            item.className = "milestone-item";
+
+            var dot = document.createElement("span");
+            dot.className = "milestone-bullet";
+            dot.textContent = "✦";
+
+            var content = document.createElement("div");
+            content.className = "milestone-content";
+
+            var title = document.createElement("div");
+            title.className = "milestone-title";
+            title.textContent = m.title;
+
+            content.appendChild(title);
+
+            if (m.detail) {
+                var detail = document.createElement("div");
+                detail.className = "milestone-detail";
+                detail.textContent = m.detail;
+                content.appendChild(detail);
+            }
+
+            item.appendChild(dot);
+            item.appendChild(content);
+            wrap.appendChild(item);
+        });
+    }
 })();

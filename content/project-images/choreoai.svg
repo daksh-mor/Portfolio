@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <!-- Background Paper -->
+  <rect width="800" height="450" fill="#F7F4EB"/>
+  
+  <!-- Outer Hand-drawn Frame -->
+  <path d="M 25,22 C 260,18 540,25 775,20 C 778,160 772,310 776,430 C 530,434 270,427 24,431 C 20,290 28,140 25,22 Z" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 22,25 C 240,27 520,21 778,24 C 773,170 779,300 773,427 C 550,429 250,432 21,428 C 26,300 21,150 22,25 Z" fill="none" stroke="#666666" stroke-width="1" stroke-dasharray="12 4" opacity="0.6"/>
+
+  <!-- Centered Dancing Pose Figure -->
+  <g transform="translate(400, 205)">
+    <!-- Motion Arc (Purple Accent) -->
+    <path d="M -150,60 C -120,-80 120,-80 150,60" fill="none" stroke="#8E24AA" stroke-width="4" stroke-linecap="round"/>
+    <path d="M -145,62 C -117,-75 117,-75 145,62" fill="none" stroke="#8E24AA" stroke-width="1.5" stroke-dasharray="8 4"/>
+
+    <!-- Stick Figure Dancer -->
+    <circle cx="0" cy="-55" r="16" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3.5"/>
+    <path d="M 0,-39 L 0,20" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"/>
+    
+    <!-- Expressive Dance Arms -->
+    <path d="M 0,-25 L -55,-50 M 0,-25 L 60,-15" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"/>
+    
+    <!-- Legs in Motion -->
+    <path d="M 0,20 L -35,75 M 0,20 L 45,60" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Motion Joint Keypoints Accent -->
+    <circle cx="-55" cy="-50" r="5" fill="#8E24AA"/>
+    <circle cx="60" cy="-15" r="5" fill="#8E24AA"/>
+    <circle cx="-35" cy="75" r="5" fill="#8E24AA"/>
+    <circle cx="45" cy="60" r="5" fill="#8E24AA"/>
+    <circle cx="0" cy="-25" r="5" fill="#8E24AA"/>
+  </g>
+
+  <!-- Title Text -->
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">CHOREOAI — TEXT TO DANCE</text>
+  <line x1="270" y1="398" x2="530" y2="398" stroke="#8E24AA" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <filter id="paper-texture" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0.96  0 1 0 0 0.94  0 0 1 0 0.89  0 0 0 0.05 0"/>
+      <feBlend mode="multiply" in="SourceGraphic" result="blend"/>
+    </filter>
+  </defs>
+
+  <!-- Background Paper -->
+  <rect width="800" height="450" fill="#F7F4EB"/>
+  
+  <!-- Sketchy Outer Border Frame -->
+  <path d="M 25,22 C 260,18 540,25 775,20 C 778,160 772,310 776,430 C 530,434 270,427 24,431 C 20,290 28,140 25,22 Z" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 22,25 C 240,27 520,21 778,24 C 773,170 779,300 773,427 C 550,429 250,432 21,428 C 26,300 21,150 22,25 Z" fill="none" stroke="#666666" stroke-width="1" stroke-dasharray="12 4" opacity="0.6"/>
+
+  <!-- Centered Sketchy Discord Robot Icon -->
+  <g transform="translate(400, 215)">
+    <!-- Hatching Lines Background behind robot -->
+    <path d="M -120,-80 L -60,-100 M -100,-40 L -40,-60 M 60,-80 L 120,-100 M 40,-40 L 100,-60" stroke="#CCCCCC" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Outer Head Outline (Multiple Sketchy Passes) -->
+    <path d="M -90,-45 C -60,-65 60,-65 90,-45 C 105,-20 110,40 95,70 C 70,85 50,75 35,65 C 10,70 -10,70 -35,65 C -50,75 -70,85 -95,70 C -110,40 -105,-20 -90,-45 Z" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M -88,-43 C -58,-63 58,-63 88,-43 C 103,-18 108,42 93,68 C 68,83 48,73 33,63 C 8,68 -8,68 -33,63 C -48,73 -68,83 -93,68 C -108,42 -103,-18 -88,-43 Z" fill="none" stroke="#444444" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- Left Ear / Strap Sketch -->
+    <path d="M -60,-62 C -50,-80 -35,-85 -25,-75" fill="none" stroke="#1976D2" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 60,-62 C 50,-80 35,-85 25,-75" fill="none" stroke="#1976D2" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Eyes (Sketchy Circles with Accent Color) -->
+    <circle cx="-35" cy="5" r="20" fill="none" stroke="#1976D2" stroke-width="3.5"/>
+    <circle cx="-35" cy="5" r="19" fill="none" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="-35" cy="5" r="8" fill="#1976D2"/>
+
+    <circle cx="35" cy="5" r="20" fill="none" stroke="#1976D2" stroke-width="3.5"/>
+    <circle cx="35" cy="5" r="19" fill="none" stroke="#1A1A1A" stroke-width="1" stroke-dasharray="4 2"/>
+    <circle cx="35" cy="5" r="8" fill="#1976D2"/>
+
+    <!-- Smile Sketch -->
+    <path d="M -22,35 Q 0,52 22,35" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+    <path d="M -20,36 Q 0,50 20,36" fill="none" stroke="#1976D2" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Caption Label Text -->
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">THUNDER BOT</text>
+  <line x1="330" y1="398" x2="470" y2="398" stroke="#1976D2" stroke-width="2" stroke-linecap="round"/>
+</svg>

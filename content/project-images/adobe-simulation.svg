@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <!-- Background Paper -->
+  <rect width="800" height="450" fill="#F7F4EB"/>
+  
+  <!-- Outer Hand-drawn Frame -->
+  <path d="M 25,22 C 260,18 540,25 775,20 C 778,160 772,310 776,430 C 530,434 270,427 24,431 C 20,290 28,140 25,22 Z" fill="none" stroke="#333333" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 22,25 C 240,27 520,21 778,24 C 773,170 779,300 773,427 C 550,429 250,432 21,428 C 26,300 21,150 22,25 Z" fill="none" stroke="#666666" stroke-width="1" stroke-dasharray="12 4" opacity="0.6"/>
+
+  <!-- Centered Content -->
+  <g transform="translate(400, 205)">
+    <!-- Analytics Chart Window -->
+    <rect x="-120" y="-70" width="240" height="140" rx="10" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="3.5"/>
+    
+    <!-- Heart Like Icon (Red Accent) -->
+    <g transform="translate(-70, -25)">
+      <path d="M 0,10 C -15,-10 -35,-5 -35,15 C -35,30 -15,42 0,55 C 15,42 35,30 35,15 C 35,-5 15,-10 0,10 Z" fill="#D32F2F" stroke="#1A1A1A" stroke-width="2.5"/>
+    </g>
+
+    <!-- Predictive Engagement Graph Lines -->
+    <g transform="translate(10, 10)">
+      <line x1="-30" y1="35" x2="90" y2="35" stroke="#1A1A1A" stroke-width="2"/>
+      <line x1="-30" y1="-45" x2="-30" y2="35" stroke="#1A1A1A" stroke-width="2"/>
+
+      <!-- Historical Line -->
+      <path d="M -30,20 L 0,5 L 30,-15" fill="none" stroke="#1A1A1A" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Forecast Line (Dotted Red Accent) -->
+      <path d="M 30,-15 L 60,-35 L 90,-45" fill="none" stroke="#D32F2F" stroke-width="3.5" stroke-dasharray="6 3" stroke-linecap="round"/>
+      <circle cx="90" cy="-45" r="5" fill="#D32F2F"/>
+    </g>
+  </g>
+
+  <!-- Title Text -->
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">ADOBE BEHAVIOUR SIMULATION</text>
+  <line x1="240" y1="398" x2="560" y2="398" stroke="#D32F2F" stroke-width="2" stroke-linecap="round"/>
+</svg>

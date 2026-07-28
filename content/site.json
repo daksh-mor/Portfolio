@@ -19,6 +19,26 @@
     "profileImageDark": "profile.jpg?v=20260411",
     "profileAlt": "Daksh Mor profile photo"
   },
+  "experiences": [
+    {
+      "company": "Microsoft",
+      "role": "Software Engineer Intern (MSRC Onsite)",
+      "period": "May 2026 – Jul 2026",
+      "summary": "Designed & shipped an agentic security VS Code extension combining LLMs with deterministic validation to automate security workflows."
+    },
+    {
+      "company": "Google Summer of Code (GSoC)",
+      "role": "Open Source Contributor (ML4DQM Remote)",
+      "period": "May 2025 – Jul 2025",
+      "summary": "Built a continual learning ViT framework with conv adapters for CERN CMS HCAL anomaly detection, cutting parameters by 60% with zero accuracy loss."
+    },
+    {
+      "company": "National University of Singapore (NUS)",
+      "role": "Research Intern (Hybrid)",
+      "period": "May 2025 – Jul 2025",
+      "summary": "Investigated mechanistic interpretability in LLMs via gradient ascent on sparse autoencoders to isolate monosemantic internal representations."
+    }
+  ],
   "social": [
     {
       "name": "GitHub",
@@ -54,6 +74,11 @@
       "name": "X",
       "url": "https://x.com/whiteboxengine",
       "icon": "x"
+    },
+    {
+      "name": "YT Music",
+      "url": "https://music.youtube.com/@dakshmor",
+      "icon": "youtubemusic"
     }
   ],
   "contact": {
@@ -61,27 +86,290 @@
     "darkEmail": "daksh3982@gmail.com"
   },
   "projectsPage": {
-    "title": "Projects"
+    "title": "Projects Timeline"
   },
-  "projects": [
+  "milestones": [
     {
-      "id": "alpha",
-      "title": "WhiteBox – AI junior analyst for equity market",
-      "description": "Agentic AI financial analyst that unifies news, filings, and sentiment into a shared memory, runs multi-agent debate to surface hidden contradictions, and delivers insights in ~90 seconds at ~3¢ (10× faster, 700× cheaper). Supports natural-language strategy input with instant backtesting on live market data.",
-      "image": "content/project-images/project-alpha.jpg",
-      "imageAlt": "Project Alpha",
-      "linkLabel": "View Project",
-      "link": "https://github.com/whintyr/whitebox"
+      "title": "GATE AIR 362 in Data Science & Artificial Intelligence",
+      "detail": "Secured AIR 362 among 70,000+ candidates appearing (90k+ registered) in national GATE DA examination"
     },
     {
-      "id": "beta",
-      "title": "ISIC 2024 - Skin Cancer Detection",
-      "description": "Skin cancer detection from smartphone-quality lesion images. Fine-tuned DINOv2 on the ISIC 2024 dataset, handling class imbalance and optimizing for partial AUC.",
-      "image": "content/project-images/project-beta.jpg",
-      "imageAlt": "Project Beta",
-      "linkLabel": "View Project",
-      "link": "https://github.com/daksh-mor/ISIC2024"
+      "title": "Amazon ML Summer School 2025",
+      "detail": "Selected for intensive deep learning & machine learning mentorship by Amazon scientists"
+    },
+    {
+      "title": "5th Place — Inter IIT Tech Meet 14.0",
+      "detail": "Pathway Problem Statement (WhiteBox Multi-Agent Engine)"
+    },
+    {
+      "title": "4x Hackathon Winner",
+      "detail": "Obscurathon (Relay Hackathon), Hackfest 2025 (National Level), Masterstack, Cosmolligence"
+    },
+    {
+      "title": "Bronze Medal (Top 9%) — ISIC 2024 Kaggle Challenge",
+      "detail": "Skin cancer lesion detection among 2,700+ global competing teams"
+    },
+    {
+      "title": "3rd Place — Concetto 2024",
+      "detail": "AI of God 3.0 printed text OCR competition"
+    },
+    {
+      "title": "GSoC 2025 Contributor — ML4SCI",
+      "detail": "Submitted NeurIPS workshop paper as part of research contribution"
+    },
+    {
+      "title": "NUS Research Internship",
+      "detail": "Explored Mechanistic Interpretability & Sparse Autoencoders in LLMs"
+    },
+    {
+      "title": "Codeforces Specialist (Max Rating: 1419)",
+      "detail": "Solved 600+ competitive programming problems across platforms"
+    }
+  ],
+  "projects": [
+    {
+      "id": "boomboom",
+      "date": "Jul 2026",
+      "year": "2026",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "BoomBoom — Doodle Royale",
+      "description": "LAN-first 3D browser multiplayer game where hand sketches become solid walkable magic ink in a 5-round Doodle Royale.",
+      "image": "content/project-images/boomboom.svg",
+      "imageAlt": "BoomBoom Doodle Royale",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/boomboom#boomboom--doodle-royale",
+      "liveUrl": "https://boomboom.dakshmor.in",
+      "liveLabel": "Play Game",
+      "itchUrl": "https://daksh-mor.itch.io/boomboom",
+      "itchLabel": "itch.io",
+      "tags": ["3D WebGL", "LAN Multiplayer", "Godot / JS"]
+    },
+    {
+      "id": "stackd",
+      "date": "Jul 2026",
+      "year": "2026",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "Stackd – Table-Top Poker Companion",
+      "description": "100% offline, zero-network poker chip companion. A single phone flat on the table manages pots, blinds, and settlements.",
+      "image": "content/project-images/stackd.jpg",
+      "imageAlt": "Stackd Poker Companion",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/Stackd",
+      "liveUrl": "https://poker.dakshmor.in",
+      "liveLabel": "Live App",
+      "tags": ["Offline-First", "Web App", "Utility UI"]
+    },
+    {
+      "id": "sham",
+      "date": "Jul 2026",
+      "year": "2026",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "Sham – Local Wi-Fi Music Guessing Game",
+      "description": "Phone-only music party game where friends sync local music libraries and race to identify song previews over local Wi-Fi.",
+      "image": "content/project-images/sham.svg",
+      "imageAlt": "Sham Music Game",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/sham",
+      "liveUrl": "https://sham.dakshmor.in",
+      "liveLabel": "Live App",
+      "itchUrl": "https://daksh-mor.itch.io/sham",
+      "itchLabel": "itch.io",
+      "tags": ["Local P2P", "Audio Stream", "Party Game"]
+    },
+    {
+      "id": "valu",
+      "date": "Jul 2026",
+      "year": "2026",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "Valu – Tactical FPS for Android & Desktop",
+      "description": "Open-source 10-player tactical FPS built with Godot 4.7.1, featuring local Wi-Fi auto-discovery and zero account requirements.",
+      "image": "content/project-images/valu.svg",
+      "imageAlt": "Valu Tactical FPS",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/valu",
+      "liveUrl": "https://valu.dakshmor.in",
+      "liveLabel": "Website & APK",
+      "itchUrl": "https://daksh-mor.itch.io/valu",
+      "itchLabel": "itch.io",
+      "tags": ["Godot 4.7", "Android & Desktop", "FPS"]
+    },
+    {
+      "id": "intellidesk",
+      "date": "Jan 2026",
+      "year": "2026",
+      "category": "llm-agents",
+      "categoryLabel": "LLMs & Agentic AI",
+      "title": "IntelliDesk AI – B2B Support Ticket Engine",
+      "description": "Autonomous support engine for B2B SaaS that prioritizes incoming emails, detects thread duplicates, and auto-responds via KB.",
+      "image": "content/project-images/intellidesk.svg",
+      "imageAlt": "IntelliDesk AI Support",
+      "linkLabel": "Live Demo",
+      "link": "https://intellidesk-wheat.vercel.app/",
+      "tags": ["LLM Agents", "B2B SaaS", "Email Automation"]
+    },
+    {
+      "id": "whitebox",
+      "date": "Dec 2025",
+      "year": "2025",
+      "category": "llm-agents",
+      "categoryLabel": "LLMs & Agentic AI",
+      "title": "WhiteBox – AI Financial Analyst for Equity Markets",
+      "description": "Multi-agent AI analyst unifying news, filings, and sentiment to deliver market insights in ~90s at ~3¢ (5th at Inter IIT Tech Meet 14.0).",
+      "image": "content/project-images/whitebox.svg",
+      "imageAlt": "WhiteBox AI Financial Analyst",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/whintyr/whitebox",
+      "tags": ["Multi-Agent AI", "Quantitative Finance", "Inter IIT 14.0"]
+    },
+    {
+      "id": "choreoai",
+      "date": "Apr 2025",
+      "year": "2025",
+      "category": "cv",
+      "categoryLabel": "Computer Vision & Multimodal",
+      "title": "ChoreoAI – Multimodal Text-to-Dance Generation",
+      "description": "Generates and labels dance sequences from motion capture data using semi-supervised autoencoders and text-to-dance models.",
+      "image": "content/project-images/choreoai.svg",
+      "imageAlt": "ChoreoAI Text to Dance",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/ChoreoAI",
+      "tags": ["Motion Capture", "Multimodal AI", "PyTorch"]
+    },
+    {
+      "id": "investsmart",
+      "date": "Apr 2025",
+      "year": "2025",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "InvestSmart – AI Jargon-Free Portfolio Manager",
+      "description": "Clean investment platform empowering non-technical users to track, analyze, and execute mutual funds and stock portfolios.",
+      "image": "content/project-images/investsmart.svg",
+      "imageAlt": "InvestSmart Portfolio",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/ayushgit12/batman",
+      "liveUrl": "https://batman-phi.vercel.app/",
+      "liveLabel": "Live Demo",
+      "tags": ["FinTech UI", "Portfolio Analytics", "AI"]
+    },
+    {
+      "id": "blog-agent",
+      "date": "Feb 2025",
+      "year": "2025",
+      "category": "llm-agents",
+      "categoryLabel": "LLMs & Agentic AI",
+      "title": "Autonomous News & Blog Publisher Agent",
+      "description": "End-to-end AI agent that searches, summarizes, and publishes news articles using Mistral-7B and the Blogger API.",
+      "image": "content/project-images/blog-agent.svg",
+      "imageAlt": "Blog Posting Autonomous Agent",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/Blog-agent",
+      "tags": ["Mistral-7B", "Autonomous Agents", "Python"]
+    },
+    {
+      "id": "ecopolis",
+      "date": "Jan 2025",
+      "year": "2025",
+      "category": "predictive-ml",
+      "categoryLabel": "Predictive & Applied ML",
+      "title": "EcoPolis – AI Urban Biodiversity Planner",
+      "description": "Interactive GIS spatial tool enabling urban planners to make biodiversity-conscious zoning decisions using machine learning.",
+      "image": "content/project-images/ecopolis.svg",
+      "imageAlt": "EcoPolis Urban Biodiversity Planner",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/devrajbando/EcoPolis-Agglo",
+      "tags": ["GIS & Spatial ML", "Urban Tech", "React"]
+    },
+    {
+      "id": "dreamteam",
+      "date": "Jan 2025",
+      "year": "2025",
+      "category": "predictive-ml",
+      "categoryLabel": "Predictive & Applied ML",
+      "title": "DreamTeam – Cricket Fantasy Point Prediction AI",
+      "description": "Benchmarked LightGBM, LSTMs, and Transformers for Dream11 point prediction (+27% accuracy) integrated with SHAP and GPT-4.",
+      "image": "content/project-images/dreamteam.svg",
+      "imageAlt": "DreamTeam Cricket Fantasy AI",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/Green-Kedia/DreamTeam",
+      "tags": ["Transformers & LSTMs", "SHAP + GPT-4", "Sports ML"]
+    },
+    {
+      "id": "ai-of-god",
+      "date": "Dec 2024",
+      "year": "2024",
+      "category": "cv",
+      "categoryLabel": "Computer Vision & Multimodal",
+      "title": "AI of God 3.0 – Printed OCR via Synthetic Data",
+      "description": "3rd Place solution at Concetto 2024. Created a data augmentation pipeline extracting printed text trained on handwritten data.",
+      "image": "content/project-images/ai-of-god.svg",
+      "imageAlt": "AI of God 3.0 Concetto 2024",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/Green-Kedia/AI_OF_GOD_3.0",
+      "liveUrl": "https://www.kaggle.com/competitions/ai-of-god-3/overview",
+      "liveLabel": "Kaggle Competition",
+      "tags": ["3rd Place Award", "Computer Vision", "Kaggle"]
+    },
+    {
+      "id": "adobe-simulation",
+      "date": "Nov 2024",
+      "year": "2024",
+      "category": "predictive-ml",
+      "categoryLabel": "Predictive & Applied ML",
+      "title": "Adobe Behaviour Simulation – Engagement Predictor",
+      "description": "Predictive machine learning model forecasting social media user engagement and likes for Adobe marketing analytics.",
+      "image": "content/project-images/adobe-simulation.svg",
+      "imageAlt": "Adobe Behaviour Simulation",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/malevolentshryne/Adobe_Behaviour_Simulation",
+      "tags": ["Predictive ML", "Marketing Analytics", "Feature Engineering"]
+    },
+    {
+      "id": "isic-2024",
+      "date": "Jul 2024",
+      "year": "2024",
+      "category": "cv",
+      "categoryLabel": "Computer Vision & Multimodal",
+      "title": "ISIC 2024 – Skin Cancer Lesion Detection",
+      "description": "Diagnoses skin cancer from lesion photos by fine-tuning vision transformer DINOv2 with extreme class imbalance handling.",
+      "image": "content/project-images/isic-2024.svg",
+      "imageAlt": "ISIC 2024 Skin Cancer Detection",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/ISIC2024",
+      "liveUrl": "https://www.kaggle.com/competitions/isic-2024-challenge",
+      "liveLabel": "Kaggle Competition",
+      "tags": ["DINOv2", "Medical AI", "Computer Vision"]
+    },
+    {
+      "id": "ml-scratch",
+      "date": "Feb 2024",
+      "year": "2024",
+      "category": "predictive-ml",
+      "categoryLabel": "Predictive & Applied ML",
+      "title": "ML Algorithms Implementation from Scratch",
+      "description": "Implemented 7 foundational ML algorithms (Linear/Logistic Reg, KNN, K-Means, Neural Nets, Transformer) from scratch in pure Python.",
+      "image": "content/project-images/ml-scratch.svg",
+      "imageAlt": "ML Algorithms from Scratch",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/WOC-6.0-ML-Bootcamp",
+      "tags": ["From Scratch", "Deep Learning", "Transformers"]
+    },
+    {
+      "id": "discord-bot",
+      "date": "Sep 2020",
+      "year": "2020",
+      "category": "weekend-projects",
+      "categoryLabel": "Weekend Project",
+      "title": "Thunder – Discord Server Management Bot",
+      "description": "Automated Discord bot for server moderation, tracking engagement analytics, and custom utility commands.",
+      "image": "content/project-images/discord-bot.svg",
+      "imageAlt": "Thunder Discord Bot",
+      "linkLabel": "GitHub Repo",
+      "link": "https://github.com/daksh-mor/thunder3982-discord-bot",
+      "tags": ["Node.js / Python", "Discord API", "Automation"]
     }
   ]
 }
-

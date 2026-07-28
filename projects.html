@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Daksh Mor</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css?v=20260411">
+    <link rel="stylesheet" href="style.css?v=20260729_v18">
 </head>
 <body>
     <!-- Navigation -->
@@ -26,12 +26,43 @@
 
     <!-- Main Content -->
     <main class="container projects-container">
-        <h1 class="page-title">Projects</h1>
-        
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <h2 class="section-main-heading">Experience</h2>
+            <div class="experience-list">
+                <!-- Filled from content/site.json -->
+            </div>
+        </section>
+
+        <h2 class="section-main-heading timeline-main-heading">Projects Timeline</h2>
+
         <section class="projects-list">
             <!-- Filled from content/site.json -->
         </section>
+
+        <!-- Category Filters relocated to bottom -->
+        <div class="category-filters category-filters-bottom" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-category="all" type="button">All Projects</button>
+            <button class="filter-btn" data-category="llm-agents" type="button">LLMs & Agentic AI</button>
+            <button class="filter-btn" data-category="cv" type="button">Computer Vision</button>
+            <button class="filter-btn" data-category="predictive-ml" type="button">Predictive ML</button>
+            <button class="filter-btn" data-category="weekend-projects" type="button">Weekend Projects & Games</button>
+        </div>
+
+        <!-- Humble Milestones Section -->
+        <section class="milestones-section">
+            <h2 class="milestones-title">Milestones</h2>
+            <div class="milestones-list">
+                <!-- Filled from content/site.json -->
+            </div>
+        </section>
     </main>
+
+    <!-- Floating Scroll Nav Button (Projects Section) -->
+    <button class="projects-scroll-btn" type="button" aria-label="Scroll timeline" title="Scroll down">
+        <span class="scroll-btn-arrow">↓</span>
+        <span class="scroll-btn-text">Scroll Down</span>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -42,6 +73,6 @@
             <p class="email"></p>
         </div>
     </footer>
-    <script src="js/content-loader.js?v=20260412"></script>
+    <script src="js/content-loader.js?v=20260729_v18"></script>
 </body>
 </html>
