@@ -1168,29 +1168,50 @@ a {
    PIXELATED COPY BUTTON & TOAST NOTIFICATION
    ============================================ */
 
-.nav-copy-btn {
+.nav-copy-btn,
+.card-copy-btn {
     background: var(--code-bg);
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 3px 8px;
-    font-size: 14px;
-    line-height: 1.2;
+    padding: 6px;
     cursor: pointer;
     color: var(--text);
-    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
-.nav-copy-btn:hover {
+.nav-copy-btn:hover,
+.card-copy-btn:hover {
     transform: scale(1.1);
     border-color: var(--sky);
     background: var(--surface);
+    color: var(--sky);
 }
 
-.nav-copy-btn:active {
+.nav-copy-btn:active,
+.card-copy-btn:active {
     transform: scale(0.95);
+}
+
+.card-copy-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    opacity: 0.25;
+    z-index: 10;
+}
+
+.project-card:hover .card-copy-btn {
+    opacity: 1;
+}
+
+.nav-copy-btn.copy-success,
+.card-copy-btn.copy-success {
+    border-color: #2ea44f;
+    color: #2ea44f;
+    background: rgba(46, 164, 79, 0.12);
 }
 
 .copy-toast {

@@ -19,6 +19,7 @@
     "profileImageDark": "profile.jpg?v=20260411",
     "profileAlt": "Daksh Mor profile photo"
   },
+  "agentBio": "Daksh Mor is a CSE Undergraduate at IIT Dhanbad ('27) and GATE AIR 362 (Data Science & AI). He specializes in Machine Learning Engineering, Multi-Agent AI Systems, and Quantitative Modeling. Key highlights include: 5th Place at Inter IIT Tech Meet 14.0 (WhiteBox Multi-Agent Engine), GSoC 2025 Contributor at ML4SCI (CERN CMS HCAL Anomaly Detection), NUS Research Intern (Mechanistic Interpretability in LLMs), Kaggle ISIC 2024 Bronze Medal (Top 9%), and 4x National Hackathon Winner.",
   "experiences": [
     {
       "company": "Microsoft",
@@ -143,7 +144,12 @@
       "liveLabel": "Play Game",
       "itchUrl": "https://daksh-mor.itch.io/boomboom",
       "itchLabel": "itch.io",
-      "tags": ["3D WebGL", "LAN Multiplayer", "Godot / JS"]
+      "tags": ["3D WebGL", "LAN Multiplayer", "Godot / JS"],
+      "roleBreakdown": {
+        "sde": "Engineered zero-server 3D WebGL architecture in Godot 4 & JS; implemented real-time 2D-to-3D stroke mesh generation algorithms converting freehand canvas doodles into collision-enabled 3D terrain; deployed P2P WebSocket mesh for low-latency LAN multiplayer synchronization.",
+        "ml": "Developed stroke path vector normalization and generative doodle classification heuristics to parse freehand user inputs into dynamic 3D game props in real time.",
+        "quant": "Designed deterministic state reconciliation algorithms for multi-player collision physics, latency compensation, and 5-round battle royale point aggregation."
+      }
     },
     {
       "id": "stackd",
@@ -159,7 +165,12 @@
       "link": "https://github.com/daksh-mor/Stackd",
       "liveUrl": "https://poker.dakshmor.in",
       "liveLabel": "Live App",
-      "tags": ["Offline-First", "Web App", "Utility UI"]
+      "tags": ["Offline-First", "Web App", "Utility UI"],
+      "roleBreakdown": {
+        "sde": "Built 100% offline Progressive Web Application (PWA) with zero network requests; implemented atomic local storage state persistence and responsive gesture-based UI for table-top phone orientation.",
+        "ml": "Designed rule-based heuristic engine for automated pot resolution and dynamic blind structure generation.",
+        "quant": "Engineered exact side-pot split algorithm handling multi-player all-in scenarios, bankroll risk distribution, and pot odds EV calculations."
+      }
     },
     {
       "id": "sham",
@@ -177,7 +188,12 @@
       "liveLabel": "Live App",
       "itchUrl": "https://daksh-mor.itch.io/sham",
       "itchLabel": "itch.io",
-      "tags": ["Local P2P", "Audio Stream", "Party Game"]
+      "tags": ["Local P2P", "Audio Stream", "Party Game"],
+      "roleBreakdown": {
+        "sde": "Constructed peer-to-peer local Wi-Fi audio streaming pipeline using Web Audio API and WebSockets; indexed local device audio metadata with zero cloud storage dependency.",
+        "ml": "Implemented dynamic spectrogram audio chunking and dynamic difficulty scoring based on song acoustic variance.",
+        "quant": "Created Bayesian player leaderboard scoring model combining answer speed, streak multipliers, and acoustic difficulty weights."
+      }
     },
     {
       "id": "valu",
@@ -195,7 +211,12 @@
       "liveLabel": "Website & APK",
       "itchUrl": "https://daksh-mor.itch.io/valu",
       "itchLabel": "itch.io",
-      "tags": ["Godot 4.7", "Android & Desktop", "FPS"]
+      "tags": ["Godot 4.7", "Android & Desktop", "FPS"],
+      "roleBreakdown": {
+        "sde": "Architected cross-platform Godot 4.7.1 engine codebase in C# & GDScript for Android APK & Desktop binaries; implemented UDP local subnet auto-discovery for zero-config multiplayer rooms.",
+        "ml": "Integrated spatial bot pathfinding algorithms with adaptive tactical positioning state evaluation.",
+        "quant": "Formulated predictive network tick interpolation, hit-box raycast calculations, and weapon recoil spray math."
+      }
     },
     {
       "id": "intellidesk",
@@ -209,7 +230,12 @@
       "imageAlt": "IntelliDesk AI Support",
       "linkLabel": "Live Demo",
       "link": "https://intellidesk-wheat.vercel.app/",
-      "tags": ["LLM Agents", "B2B SaaS", "Email Automation"]
+      "tags": ["LLM Agents", "B2B SaaS", "Email Automation"],
+      "roleBreakdown": {
+        "sde": "Built full-stack B2B SaaS architecture using Next.js, PostgreSQL/Supabase, and webhook email ingestion pipelines; implemented role-based ticket routing and SLA tracking dashboards.",
+        "ml": "Orchestrated autonomous LLM agent workflow for ticket categorization, semantic vector retrieval (RAG) over knowledge bases, and duplicate thread detection.",
+        "quant": "Developed priority queue scoring model based on customer tier, SLA countdown, and sentiment urgency metrics."
+      }
     },
     {
       "id": "whitebox",
@@ -223,7 +249,12 @@
       "imageAlt": "WhiteBox AI Financial Analyst",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/whintyr/whitebox",
-      "tags": ["Multi-Agent AI", "Quantitative Finance", "Inter IIT 14.0"]
+      "tags": ["Multi-Agent AI", "Quantitative Finance", "Inter IIT 14.0"],
+      "roleBreakdown": {
+        "sde": "Engineered streaming-native financial data pipeline using Kafka, Pathway, and Docker; built dual-layer memory with DocumentStore for RAG over SEC filings and news.",
+        "ml": "Orchestrated multi-agent LangGraph workflow featuring specialized sub-agents, semantic reranking, and contextual enrichment (achieved 88.3% tool selection accuracy & +21% precision).",
+        "quant": "Designed automated equity market research framework ingesting real-time SEC 10-K/10-Q filings, news sentiment, and fundamentals for investment analysis at ~3¢ per run."
+      }
     },
     {
       "id": "choreoai",
@@ -237,7 +268,12 @@
       "imageAlt": "ChoreoAI Text to Dance",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/ChoreoAI",
-      "tags": ["Motion Capture", "Multimodal AI", "PyTorch"]
+      "tags": ["Motion Capture", "Multimodal AI", "PyTorch"],
+      "roleBreakdown": {
+        "sde": "Built 3D motion-capture dataset extraction and normalization pipeline in PyTorch; developed WebGL skeleton rendering interface for dynamic sequence playback.",
+        "ml": "Trained semi-supervised VAE autoencoder and text-conditioned generative model to synthesize 3D skeletal joint movements from natural language prompts.",
+        "quant": "Formulated high-dimensional kinematic trajectory vectors, joint angle velocity loss functions, and spatial correlation matrices."
+      }
     },
     {
       "id": "investsmart",
@@ -253,7 +289,12 @@
       "link": "https://github.com/ayushgit12/batman",
       "liveUrl": "https://batman-phi.vercel.app/",
       "liveLabel": "Live Demo",
-      "tags": ["FinTech UI", "Portfolio Analytics", "AI"]
+      "tags": ["FinTech UI", "Portfolio Analytics", "AI"],
+      "roleBreakdown": {
+        "sde": "Developed responsive FinTech Web UI in React with REST API integration, secure user authentication, and client-side data caching.",
+        "ml": "Integrated conversational LLM agent to translate complex financial jargon and SEC disclosures into plain-English summaries.",
+        "quant": "Implemented portfolio risk metrics, Sharpe ratio calculation, asset allocation optimization algorithms, and mutual fund return backtesting."
+      }
     },
     {
       "id": "blog-agent",
@@ -267,7 +308,12 @@
       "imageAlt": "Blog Posting Autonomous Agent",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/Blog-agent",
-      "tags": ["Mistral-7B", "Autonomous Agents", "Python"]
+      "tags": ["Mistral-7B", "Autonomous Agents", "Python"],
+      "roleBreakdown": {
+        "sde": "Built automated web scraping pipeline and Blogger REST API integration with scheduled cron execution and logging.",
+        "ml": "Fine-tuned Mistral-7B prompt templates for automated news summarization, click-worthy headline generation, and content deduplication.",
+        "quant": "Designed trend velocity scoring metric to rank incoming news articles by reader interest and topic virality."
+      }
     },
     {
       "id": "ecopolis",
@@ -281,7 +327,12 @@
       "imageAlt": "EcoPolis Urban Biodiversity Planner",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/devrajbando/EcoPolis-Agglo",
-      "tags": ["GIS & Spatial ML", "Urban Tech", "React"]
+      "tags": ["GIS & Spatial ML", "Urban Tech", "React"],
+      "roleBreakdown": {
+        "sde": "Constructed interactive GIS Web map UI in React; parsed GeoJSON spatial datasets with client-side layer toggling and heatmaps.",
+        "ml": "Trained spatial habitat suitability classifier combining satellite imagery and ecological features for land zoning recommendation.",
+        "quant": "Engineered spatial correlation matrices and multi-objective optimization heuristics balancing urban growth against environmental risk."
+      }
     },
     {
       "id": "dreamteam",
@@ -295,7 +346,12 @@
       "imageAlt": "DreamTeam Cricket Fantasy AI",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/Green-Kedia/DreamTeam",
-      "tags": ["Transformers & LSTMs", "SHAP + GPT-4", "Sports ML"]
+      "tags": ["Transformers & LSTMs", "SHAP + GPT-4", "Sports ML"],
+      "roleBreakdown": {
+        "sde": "Built automated data ingestion scripts and feature store pipeline in Python; structured modular model evaluation harness for automated benchmarking.",
+        "ml": "Benchmarked LightGBM, LSTMs, and Transformer models (+27% accuracy improvement over baseline); integrated SHAP feature attribution with GPT-4 for natural language explanations.",
+        "quant": "Engineered probabilistic time-series temporal models, player career momentum metrics, match condition weights, and strategy backtesting."
+      }
     },
     {
       "id": "ai-of-god",
@@ -311,7 +367,12 @@
       "link": "https://github.com/Green-Kedia/AI_OF_GOD_3.0",
       "liveUrl": "https://www.kaggle.com/competitions/ai-of-god-3/overview",
       "liveLabel": "Kaggle Competition",
-      "tags": ["3rd Place Award", "Computer Vision", "Kaggle"]
+      "tags": ["3rd Place Award", "Computer Vision", "Kaggle"],
+      "roleBreakdown": {
+        "sde": "Engineered synthetic document rendering engine generating 50,000+ augmented text images; built distributed PyTorch model training CLI.",
+        "ml": "Fine-tuned Vision-Encoder-Decoder TrOCR (frozen LayerNorm) combined with BERT-based linguistic post-processing, reducing Word Error Rate (WER) from 0.280 to 0.221 (21% relative gain).",
+        "quant": "Formulated statistical distribution modeling over Character Error Rate (CER) and WER loss metrics to optimize epoch stopping criteria."
+      }
     },
     {
       "id": "adobe-simulation",
@@ -325,7 +386,12 @@
       "imageAlt": "Adobe Behaviour Simulation",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/malevolentshryne/Adobe_Behaviour_Simulation",
-      "tags": ["Predictive ML", "Marketing Analytics", "Feature Engineering"]
+      "tags": ["Predictive ML", "Marketing Analytics", "Feature Engineering"],
+      "roleBreakdown": {
+        "sde": "Constructed automated data cleaning, transformation, and feature extraction pipeline in Python & Pandas; structured modular Scikit-learn feature store.",
+        "ml": "Trained Gradient Boosting and Random Forest models for continuous engagement score prediction; tuned hyperparameters using Optuna cross-validation.",
+        "quant": "Executed correlation analysis, feature importance selection, and quantile regression for skewed social media engagement metrics."
+      }
     },
     {
       "id": "isic-2024",
@@ -341,7 +407,12 @@
       "link": "https://github.com/daksh-mor/ISIC2024",
       "liveUrl": "https://www.kaggle.com/competitions/isic-2024-challenge",
       "liveLabel": "Kaggle Competition",
-      "tags": ["DINOv2", "Medical AI", "Computer Vision"]
+      "tags": ["DINOv2", "Medical AI", "Computer Vision"],
+      "roleBreakdown": {
+        "sde": "Built high-throughput GPU data loading pipeline handling 400,000+ 3D total body image crops from SLICE-3D dataset; automated Kaggle submission pipeline.",
+        "ml": "Fine-tuned DINOv2 vision transformer and stacked CNN predictions (EfficientNet, ResNet, DenseNet) with LightGBM using triple stratified group K-fold cross-validation.",
+        "quant": "Optimized pAUC metric at 80% specificity (achieved 0.18512 public / 0.16904 private leaderboard score, Top 9% Kaggle Bronze Medal out of 2,700+ global teams)."
+      }
     },
     {
       "id": "ml-scratch",
@@ -355,7 +426,12 @@
       "imageAlt": "ML Algorithms from Scratch",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/WOC-6.0-ML-Bootcamp",
-      "tags": ["From Scratch", "Deep Learning", "Transformers"]
+      "tags": ["From Scratch", "Deep Learning", "Transformers"],
+      "roleBreakdown": {
+        "sde": "Implemented 7 machine learning algorithms in pure Python using zero external ML libraries (NumPy only), adhering to strict Object-Oriented software design patterns.",
+        "ml": "Wrote custom matrix vectorization, gradient descent optimization, backpropagation derivatives, and Transformer multi-head self-attention math from first principles.",
+        "quant": "Derived loss function gradients, Hessian matrices, and convergence bounds for optimization algorithms."
+      }
     },
     {
       "id": "discord-bot",
@@ -369,7 +445,12 @@
       "imageAlt": "Thunder Discord Bot",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/thunder3982-discord-bot",
-      "tags": ["Node.js / Python", "Discord API", "Automation"]
+      "tags": ["Node.js / Python", "Discord API", "Automation"],
+      "roleBreakdown": {
+        "sde": "Developed event-driven Discord API bot in Node.js & Python; implemented command routing, SQLite database persistence, and automated moderation actions.",
+        "ml": "Integrated basic NLP text sentiment analysis to flag toxic server messages automatically.",
+        "quant": "Tracked user activity time-series data, channel message velocity, and engagement growth metrics."
+      }
     }
   ]
 }

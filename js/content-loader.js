@@ -186,6 +186,20 @@
             var card = document.createElement("div");
             card.className = "project-card timeline-card";
 
+            // GitHub-style Per-Project Copy Button (Option A Top-Right)
+            var cardCopyBtn = document.createElement("button");
+            cardCopyBtn.className = "card-copy-btn";
+            cardCopyBtn.type = "button";
+            cardCopyBtn.setAttribute("aria-label", "Copy project context for AI agent");
+            cardCopyBtn.setAttribute("title", "Copy project context for AI agent");
+            cardCopyBtn.innerHTML = GITHUB_COPY_SVG;
+            cardCopyBtn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                var projectMd = buildSingleProjectMarkdown(project);
+                copyTextToClipboard(projectMd, "Copied " + (project.title || "project") + " context to clipboard", cardCopyBtn);
+            });
+            card.appendChild(cardCopyBtn);
+
             if (project.categoryLabel) {
                 var catBadge = document.createElement("span");
                 catBadge.className = "project-category-badge " + (project.category || "");
@@ -563,22 +577,43 @@
         });
     }
 
+    var GITHUB_COPY_SVG = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path></svg>';
+    var GITHUB_CHECK_SVG = '<svg aria-hidden="true" height="16" viewBox="0 0 16 16" width="16" fill="currentColor"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path></svg>';
+
     function setupCopyButton(data) {
         var copyBtn = bySelector(".nav-copy-btn");
         if (!copyBtn) return;
 
+        copyBtn.innerHTML = GITHUB_COPY_SVG;
+
         copyBtn.addEventListener("click", function () {
             var markdownText = buildAgentMarkdown(data);
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(markdownText).then(function () {
-                    showCopyToast("Copied context of website to clipboard");
-                }).catch(function () {
-                    fallbackCopyText(markdownText);
-                });
-            } else {
-                fallbackCopyText(markdownText);
-            }
+            copyTextToClipboard(markdownText, "Copied context of website to clipboard", copyBtn);
         });
+    }
+
+    function copyTextToClipboard(text, toastMsg, btnEl) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function () {
+                onCopySuccess(toastMsg, btnEl);
+            }).catch(function () {
+                fallbackCopyText(text, toastMsg, btnEl);
+            });
+        } else {
+            fallbackCopyText(text, toastMsg, btnEl);
+        }
+    }
+
+    function onCopySuccess(toastMsg, btnEl) {
+        showCopyToast(toastMsg);
+        if (btnEl) {
+            btnEl.classList.add("copy-success");
+            btnEl.innerHTML = GITHUB_CHECK_SVG;
+            setTimeout(function () {
+                btnEl.classList.remove("copy-success");
+                btnEl.innerHTML = GITHUB_COPY_SVG;
+            }, 2000);
+        }
     }
 
     function showCopyToast(msg) {
@@ -606,7 +641,7 @@
         }, 2500);
     }
 
-    function fallbackCopyText(text) {
+    function fallbackCopyText(text, toastMsg, btnEl) {
         var textArea = document.createElement("textarea");
         textArea.value = text;
         textArea.style.position = "fixed";
@@ -616,18 +651,63 @@
         textArea.select();
         try {
             document.execCommand("copy");
-            showCopyToast("Copied context of website to clipboard");
+            onCopySuccess(toastMsg, btnEl);
         } catch (err) {
             console.error("Could not copy text: ", err);
         }
         document.body.removeChild(textArea);
     }
 
+    function buildSingleProjectMarkdown(p) {
+        var lines = [];
+        lines.push("# " + p.title + " — Deep Technical Specification");
+        lines.push("");
+        lines.push("## Overview");
+        lines.push("- **Category**: " + (p.categoryLabel || p.category || "Project"));
+        lines.push("- **Date**: " + (p.date || "N/A"));
+        lines.push("- **Summary**: " + p.description);
+        if (p.link) lines.push("- **GitHub**: " + p.link);
+        if (p.liveUrl) lines.push("- **" + (p.liveLabel || "Live") + "**: " + p.liveUrl);
+        if (p.itchUrl) lines.push("- **" + (p.itchLabel || "itch.io") + "**: " + p.itchUrl);
+        if (Array.isArray(p.tags) && p.tags.length > 0) {
+            lines.push("- **Tech Stack**: " + p.tags.join(", "));
+        }
+        lines.push("");
+
+        if (p.roleBreakdown) {
+            lines.push("## Role-Tailored Technical Breakdown");
+            lines.push("");
+            if (p.roleBreakdown.sde) {
+                lines.push("### 🛠️ Software Engineering (SDE Perspective)");
+                lines.push(p.roleBreakdown.sde);
+                lines.push("");
+            }
+            if (p.roleBreakdown.ml) {
+                lines.push("### 🧠 Machine Learning & AI (ML Perspective)");
+                lines.push(p.roleBreakdown.ml);
+                lines.push("");
+            }
+            if (p.roleBreakdown.quant) {
+                lines.push("### 📈 Quantitative Modeling & Applied Math (Quant Perspective)");
+                lines.push(p.roleBreakdown.quant);
+                lines.push("");
+            }
+        }
+
+        return lines.join("\n");
+    }
+
     function buildAgentMarkdown(data) {
         var lines = [];
         lines.push("# Daksh Mor — Portfolio & Profile Context");
         lines.push("");
-        lines.push("## Bio & Overview");
+        if (data.agentBio) {
+            lines.push("## Candidate Overview");
+            lines.push(data.agentBio);
+            lines.push("");
+        }
+
+        lines.push("## Bio & Mission");
         if (data.home && Array.isArray(data.home.bio)) {
             lines.push(data.home.bio.join("\n\n"));
         }
@@ -657,17 +737,23 @@
         }
         lines.push("");
 
-        lines.push("## Projects Timeline");
+        lines.push("## Deep Projects Portfolio (16 Projects with SDE, ML & Quant Breakdowns)");
+        lines.push("");
         if (Array.isArray(data.projects)) {
             data.projects.forEach(function(p, idx) {
                 lines.push("### " + (idx + 1) + ". " + p.title + " (" + p.date + ")");
                 lines.push("- **Category**: " + (p.categoryLabel || p.category || "Project"));
-                lines.push("- **Description**: " + p.description);
+                lines.push("- **Summary**: " + p.description);
                 if (p.link) lines.push("- **GitHub**: " + p.link);
                 if (p.liveUrl) lines.push("- **" + (p.liveLabel || "Live") + "**: " + p.liveUrl);
                 if (p.itchUrl) lines.push("- **" + (p.itchLabel || "itch.io") + "**: " + p.itchUrl);
                 if (Array.isArray(p.tags) && p.tags.length > 0) {
                     lines.push("- **Tech**: " + p.tags.join(", "));
+                }
+                if (p.roleBreakdown) {
+                    lines.push("- **SDE Perspective**: " + p.roleBreakdown.sde);
+                    lines.push("- **ML Perspective**: " + p.roleBreakdown.ml);
+                    lines.push("- **Quant Perspective**: " + p.roleBreakdown.quant);
                 }
                 lines.push("");
             });
