@@ -1129,3 +1129,90 @@ a {
 .projects-scroll-btn.is-up:hover .scroll-btn-arrow {
     transform: translateY(-2px);
 }
+
+/* ============================================
+   DESKTOP HOME 100VH VIEWPORT FIT
+   ============================================ */
+
+@media (min-width: 1024px) {
+    body.home-page {
+        height: 100vh;
+        max-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    body.home-page main.container {
+        margin: auto 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    body.home-page .hero-content {
+        gap: 28px;
+    }
+
+    body.home-page .profile-image img {
+        height: clamp(320px, 45vh, 420px);
+    }
+
+    body.home-page .footer {
+        margin-top: auto;
+        padding: 16px 0 24px 0;
+    }
+}
+
+/* ============================================
+   PIXELATED COPY BUTTON & TOAST NOTIFICATION
+   ============================================ */
+
+.nav-copy-btn {
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 3px 8px;
+    font-size: 14px;
+    line-height: 1.2;
+    cursor: pointer;
+    color: var(--text);
+    transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-copy-btn:hover {
+    transform: scale(1.1);
+    border-color: var(--sky);
+    background: var(--surface);
+}
+
+.nav-copy-btn:active {
+    transform: scale(0.95);
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    background: var(--text);
+    color: var(--bg);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+}
+
+.copy-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

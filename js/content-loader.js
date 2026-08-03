@@ -416,6 +416,8 @@
                 renderMilestones(data.milestones);
             }
 
+            setupCopyButton(data);
+
             // Setup Floating Scroll Nav Button (Projects Section)
             var scrollBtn = bySelector(".projects-scroll-btn");
             if (scrollBtn) {
@@ -559,5 +561,118 @@
             item.appendChild(content);
             wrap.appendChild(item);
         });
+    }
+
+    function setupCopyButton(data) {
+        var copyBtn = bySelector(".nav-copy-btn");
+        if (!copyBtn) return;
+
+        copyBtn.addEventListener("click", function () {
+            var markdownText = buildAgentMarkdown(data);
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(markdownText).then(function () {
+                    showCopyToast("Copied context of website to clipboard");
+                }).catch(function () {
+                    fallbackCopyText(markdownText);
+                });
+            } else {
+                fallbackCopyText(markdownText);
+            }
+        });
+    }
+
+    function showCopyToast(msg) {
+        var existing = bySelector(".copy-toast");
+        if (existing) {
+            existing.remove();
+        }
+
+        var toast = document.createElement("div");
+        toast.className = "copy-toast";
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+
+        setTimeout(function () {
+            toast.classList.add("show");
+        }, 10);
+
+        setTimeout(function () {
+            toast.classList.remove("show");
+            setTimeout(function () {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }, 2500);
+    }
+
+    function fallbackCopyText(text) {
+        var textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            showCopyToast("Copied context of website to clipboard");
+        } catch (err) {
+            console.error("Could not copy text: ", err);
+        }
+        document.body.removeChild(textArea);
+    }
+
+    function buildAgentMarkdown(data) {
+        var lines = [];
+        lines.push("# Daksh Mor — Portfolio & Profile Context");
+        lines.push("");
+        lines.push("## Bio & Overview");
+        if (data.home && Array.isArray(data.home.bio)) {
+            lines.push(data.home.bio.join("\n\n"));
+        }
+        lines.push("");
+        lines.push("- **Role**: CSE Undergraduate at IIT Dhanbad '27");
+        lines.push("- **Email**: " + ((data.contact && data.contact.email) || "daksh3982@gmail.com"));
+        if (Array.isArray(data.social)) {
+            var linksStr = data.social.map(function(s) { return s.name + ": " + s.url; }).join(", ");
+            lines.push("- **Links**: " + linksStr);
+        }
+        lines.push("");
+
+        lines.push("## Work Experience");
+        if (Array.isArray(data.experiences)) {
+            data.experiences.forEach(function(exp) {
+                lines.push("- **" + exp.company + "** (" + exp.period + "): " + exp.role);
+                lines.push("  " + exp.summary);
+            });
+        }
+        lines.push("");
+
+        lines.push("## Key Milestones & Achievements");
+        if (Array.isArray(data.milestones)) {
+            data.milestones.forEach(function(m) {
+                lines.push("- **" + m.title + "**: " + m.detail);
+            });
+        }
+        lines.push("");
+
+        lines.push("## Projects Timeline");
+        if (Array.isArray(data.projects)) {
+            data.projects.forEach(function(p, idx) {
+                lines.push("### " + (idx + 1) + ". " + p.title + " (" + p.date + ")");
+                lines.push("- **Category**: " + (p.categoryLabel || p.category || "Project"));
+                lines.push("- **Description**: " + p.description);
+                if (p.link) lines.push("- **GitHub**: " + p.link);
+                if (p.liveUrl) lines.push("- **" + (p.liveLabel || "Live") + "**: " + p.liveUrl);
+                if (p.itchUrl) lines.push("- **" + (p.itchLabel || "itch.io") + "**: " + p.itchUrl);
+                if (Array.isArray(p.tags) && p.tags.length > 0) {
+                    lines.push("- **Tech**: " + p.tags.join(", "));
+                }
+                lines.push("");
+            });
+        }
+
+        return lines.join("\n");
     }
 })();
