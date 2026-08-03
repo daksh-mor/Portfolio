@@ -602,11 +602,37 @@ a {
     border-color: rgba(74, 144, 226, 0.4);
 }
 
-/* Category Badges — Completely Hidden by default, Appears ONLY on Hover */
+/* Card Header Container — Prevents Overlaps */
+.project-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 5;
+}
+
+.project-card-header .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1;
+    min-width: 0;
+}
+
+.project-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* Category Badges — Appears ONLY on Hover */
 .project-category-badge {
-    position: absolute;
-    top: 14px;
-    right: 14px;
+    position: relative;
+    top: auto;
+    right: auto;
     font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
@@ -621,7 +647,7 @@ a {
     transform: translateY(-4px);
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
-    z-index: 10;
+    white-space: nowrap;
 }
 
 .timeline-card:hover .project-category-badge {
@@ -1196,11 +1222,11 @@ a {
 }
 
 .card-copy-btn {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    opacity: 0.25;
-    z-index: 10;
+    position: relative;
+    top: auto;
+    right: auto;
+    opacity: 0.35;
+    z-index: 5;
 }
 
 .project-card:hover .card-copy-btn {

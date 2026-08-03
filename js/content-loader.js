@@ -186,7 +186,31 @@
             var card = document.createElement("div");
             card.className = "project-card timeline-card";
 
-            // GitHub-style Per-Project Copy Button (Option A Top-Right)
+            var cardHeader = document.createElement("div");
+            cardHeader.className = "project-card-header";
+
+            var tagsWrap = document.createElement("div");
+            tagsWrap.className = "project-tags";
+            if (Array.isArray(project.tags) && project.tags.length > 0) {
+                project.tags.forEach(function (tagText) {
+                    var tag = document.createElement("span");
+                    tag.className = "project-tag";
+                    tag.textContent = tagText;
+                    tagsWrap.appendChild(tag);
+                });
+            }
+            cardHeader.appendChild(tagsWrap);
+
+            var actionsWrap = document.createElement("div");
+            actionsWrap.className = "project-card-actions";
+
+            if (project.categoryLabel) {
+                var catBadge = document.createElement("span");
+                catBadge.className = "project-category-badge " + (project.category || "");
+                catBadge.textContent = project.categoryLabel;
+                actionsWrap.appendChild(catBadge);
+            }
+
             var cardCopyBtn = document.createElement("button");
             cardCopyBtn.className = "card-copy-btn";
             cardCopyBtn.type = "button";
@@ -198,29 +222,13 @@
                 var projectMd = buildSingleProjectMarkdown(project);
                 copyTextToClipboard(projectMd, "Copied " + (project.title || "project") + " context to clipboard", cardCopyBtn);
             });
-            card.appendChild(cardCopyBtn);
+            actionsWrap.appendChild(cardCopyBtn);
 
-            if (project.categoryLabel) {
-                var catBadge = document.createElement("span");
-                catBadge.className = "project-category-badge " + (project.category || "");
-                catBadge.textContent = project.categoryLabel;
-                card.appendChild(catBadge);
-            }
+            cardHeader.appendChild(actionsWrap);
+            card.appendChild(cardHeader);
 
             var headerMeta = document.createElement("div");
             headerMeta.className = "project-header-meta";
-
-            if (Array.isArray(project.tags) && project.tags.length > 0) {
-                var tagsWrap = document.createElement("div");
-                tagsWrap.className = "project-tags";
-                project.tags.forEach(function (tagText) {
-                    var tag = document.createElement("span");
-                    tag.className = "project-tag";
-                    tag.textContent = tagText;
-                    tagsWrap.appendChild(tag);
-                });
-                headerMeta.appendChild(tagsWrap);
-            }
 
             var imageWrap = document.createElement("div");
             imageWrap.className = "project-image";
