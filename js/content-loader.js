@@ -186,6 +186,25 @@
             var card = document.createElement("div");
             card.className = "project-card timeline-card";
 
+            var imageWrap = document.createElement("div");
+            imageWrap.className = "project-image";
+
+            var image = document.createElement("img");
+            image.src = project.image || "content/project-images/placeholder.jpg";
+            image.alt = project.imageAlt || project.title || "Project";
+            image.onerror = function() {
+                this.onerror = null;
+                this.style.display = "none";
+                imageWrap.classList.add("image-placeholder-fallback");
+                imageWrap.innerHTML = '<div class="fallback-graphic"><span class="fallback-icon">✦</span></div>';
+            };
+
+            imageWrap.appendChild(image);
+            card.appendChild(imageWrap);
+
+            var info = document.createElement("div");
+            info.className = "project-info";
+
             var cardHeader = document.createElement("div");
             cardHeader.className = "project-card-header";
 
@@ -225,36 +244,17 @@
             actionsWrap.appendChild(cardCopyBtn);
 
             cardHeader.appendChild(actionsWrap);
-            card.appendChild(cardHeader);
-
-            var headerMeta = document.createElement("div");
-            headerMeta.className = "project-header-meta";
-
-            var imageWrap = document.createElement("div");
-            imageWrap.className = "project-image";
-
-            var image = document.createElement("img");
-            image.src = project.image || "content/project-images/placeholder.jpg";
-            image.alt = project.imageAlt || project.title || "Project";
-            image.onerror = function() {
-                this.onerror = null;
-                this.style.display = "none";
-                imageWrap.classList.add("image-placeholder-fallback");
-                imageWrap.innerHTML = '<div class="fallback-graphic"><span class="fallback-icon">✦</span></div>';
-            };
-
-            imageWrap.appendChild(image);
-
-            var info = document.createElement("div");
-            info.className = "project-info";
+            info.appendChild(cardHeader);
 
             var title = document.createElement("h2");
             title.className = "project-title";
             title.textContent = project.title || "Project Title";
+            info.appendChild(title);
 
             var description = document.createElement("p");
             description.className = "project-description";
             description.innerHTML = formatInlineMarkdown(project.description || "Project description.");
+            info.appendChild(description);
 
             var linksWrap = document.createElement("div");
             linksWrap.className = "project-links";
