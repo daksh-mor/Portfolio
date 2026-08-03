@@ -288,10 +288,6 @@
                 itchLink.innerHTML = (project.itchLabel || 'itch.io') + ' <span class="arrow">↗</span>';
                 linksWrap.appendChild(itchLink);
             }
-
-            info.appendChild(headerMeta);
-            info.appendChild(title);
-            info.appendChild(description);
             info.appendChild(linksWrap);
 
             card.appendChild(imageWrap);
