@@ -27,6 +27,6 @@
   </g>
 
   <!-- Title Text -->
-  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">VALU — TACTICAL FPS</text>
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">VALU - TACTICAL FPS</text>
   <line x1="290" y1="398" x2="510" y2="398" stroke="#D32F2F" stroke-width="2" stroke-linecap="round"/>
 </svg>

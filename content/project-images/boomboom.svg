@@ -39,6 +39,6 @@
   </g>
 
   <!-- Title Text -->
-  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">BOOMBOOM — DOODLE ROYALE</text>
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">BOOMBOOM - DOODLE ROYALE</text>
   <line x1="280" y1="398" x2="520" y2="398" stroke="#00ACC1" stroke-width="2" stroke-linecap="round"/>
 </svg>

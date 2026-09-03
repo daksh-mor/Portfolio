@@ -527,7 +527,7 @@
 
             var popTitle = document.createElement("div");
             popTitle.className = "popover-title";
-            popTitle.textContent = exp.company + " — " + exp.role;
+            popTitle.textContent = exp.company + " - " + exp.role;
 
             var popDesc = document.createElement("p");
             popDesc.className = "popover-desc";
@@ -664,7 +664,7 @@
 
     function buildSingleProjectMarkdown(p) {
         var lines = [];
-        lines.push("# " + p.title + " — Deep Technical Specification");
+        lines.push("# " + p.title + " - Deep Technical Specification");
         lines.push("");
         lines.push("## Overview");
         lines.push("- **Category**: " + (p.categoryLabel || p.category || "Project"));
@@ -703,7 +703,7 @@
 
     function buildAgentMarkdown(data) {
         var lines = [];
-        lines.push("# Daksh Mor — Portfolio & Profile Context");
+        lines.push("# Daksh Mor - Portfolio & Profile Context");
         lines.push("");
         if (data.agentBio) {
             lines.push("## Candidate Overview");

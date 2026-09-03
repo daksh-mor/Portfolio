@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FirstLight: what's next?</title>
+  <meta name="description" content="A distraction-free macOS app that sits on your Mac and asks one question: what's next? Keyboard-only, offline, plain markdown.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23000'/><rect x='6' y='4' width='4' height='4' fill='%23f59e0b'/><rect x='2' y='8' width='12' height='2' fill='%23fff'/><rect x='0' y='11' width='16' height='1' fill='%23555'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #09090b;
+      --bg-surface: #121216;
+      --bg-terminal: #000000;
+      --text: #f4f4f5;
+      --text-muted: #8a8a93;
+      --border: #27272a;
+      --border-light: #3f3f46;
+      --amber: #f59e0b;
+      --amber-dim: rgba(245, 158, 11, 0.15);
+      --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Roboto Mono", Menlo, Consolas, monospace;
+      --font-pixel: "Silkscreen", monospace;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 16px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Grid background pattern */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px 0 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 36px;
+      border-bottom: 2px dashed var(--border);
+      margin-bottom: 48px;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: var(--font-pixel);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    .pixel-sun {
+      width: 20px;
+      height: 20px;
+      image-rendering: pixelated;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+    }
+
+    .header-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .header-links a:hover {
+      color: var(--amber);
+    }
+
+    /* Hero */
+    .pill {
+      display: inline-block;
+      font-family: var(--font-pixel);
+      font-size: 10px;
+      padding: 4px 8px;
+      background: var(--amber-dim);
+      color: var(--amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      margin-bottom: 20px;
+      letter-spacing: 0.06em;
+    }
+
+    h1 {
+      font-size: clamp(34px, 7vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: #a1a1aa;
+      line-height: 1.6;
+      margin-bottom: 36px;
+      max-width: 620px;
+    }
+
+    /* Interactive Demo Screen */
+    .app-screen {
+      background: var(--bg-terminal);
+      border: 2px solid var(--border-light);
+      box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      padding: 32px 24px;
+      margin-bottom: 48px;
+      cursor: text;
+      position: relative;
+    }
+
+    .app-screen-label {
+      position: absolute;
+      top: -10px;
+      left: 14px;
+      background: var(--bg);
+      padding: 0 8px;
+      font-size: 10px;
+      font-family: var(--font-pixel);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .task-display {
+      font-size: clamp(22px, 4.5vw, 32px);
+      font-weight: 600;
+      color: #ffffff;
+      min-height: 48px;
+      word-break: break-word;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .task-prefix {
+      color: var(--amber);
+      font-family: var(--font-pixel);
+      font-size: 20px;
+      user-select: none;
+    }
+
+    .task-text {
+      color: #ffffff;
+      outline: none;
+    }
+
+    .task-text.done {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 24px;
+      background: var(--amber);
+      animation: blink 1s infinite;
+      vertical-align: middle;
+      margin-left: 2px;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .screen-footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .screen-keys span {
+      background: #1c1c22;
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      color: var(--text);
+      font-size: 11px;
+      margin-right: 2px;
+    }
+
+    .screen-hint {
+      color: var(--amber);
+      font-size: 11px;
+    }
+
+    /* Install Section */
+    .section-title {
+      font-family: var(--font-pixel);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .install-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      position: relative;
+    }
+
+    .install-cmd {
+      font-size: 13px;
+      color: #e4e4e7;
+      overflow-x: auto;
+      white-space: nowrap;
+      scrollbar-width: none;
+    }
+
+    .install-cmd::-webkit-scrollbar {
+      display: none;
+    }
+
+    .copy-btn {
+      background: #27272a;
+      border: 1px solid var(--border-light);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 6px 12px;
+      border-radius: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: all 0.15s;
+      box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.4);
+    }
+
+    .copy-btn:hover {
+      background: #3f3f46;
+      border-color: #52525b;
+      color: #ffffff;
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.6);
+    }
+
+    .copy-btn:active {
+      transform: translate(1px, 1px);
+      box-shadow: 0 0 0;
+    }
+
+    .copy-btn.copied {
+      background: var(--amber);
+      color: #000;
+      border-color: var(--amber);
+    }
+
+    .download-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .pixel-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      color: #000000;
+      font-family: var(--font-pixel);
+      font-size: 12px;
+      text-decoration: none;
+      padding: 12px 20px;
+      border: 2px solid #ffffff;
+      box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .pixel-btn:hover {
+      background: var(--amber);
+      border-color: var(--amber);
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px rgba(245, 158, 11, 0.3);
+    }
+
+    .pixel-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0 0 0;
+    }
+
+    .pixel-btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 2px solid var(--border-light);
+      box-shadow: 4px 4px 0px var(--border);
+    }
+
+    .pixel-btn-secondary:hover {
+      background: var(--bg-surface);
+      border-color: var(--text-muted);
+      color: #fff;
+      box-shadow: 6px 6px 0px var(--border-light);
+    }
+
+    /* 3 Pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .pillar-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .pillar-num {
+      font-family: var(--font-pixel);
+      font-size: 11px;
+      color: var(--amber);
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .pillar-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .pillar-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Shortcuts Table */
+    .shortcuts-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 48px;
+      font-size: 13px;
+    }
+
+    .shortcuts-table th,
+    .shortcuts-table td {
+      padding: 10px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .shortcuts-table th {
+      color: var(--text-muted);
+      font-family: var(--font-pixel);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .shortcuts-table td:first-child {
+      font-weight: 600;
+      color: var(--amber);
+      white-space: nowrap;
+      width: 35%;
+    }
+
+    .shortcuts-table td:last-child {
+      color: #d4d4d8;
+    }
+
+    /* Footer */
+    footer {
+      padding-top: 32px;
+      border-top: 2px dashed var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--amber);
+    }
+
+    @media (max-width: 600px) {
+      .app-screen {
+        padding: 24px 16px;
+      }
+      .task-display {
+        font-size: 22px;
+      }
+      .screen-footer {
+        font-size: 11px;
+      }
+      .install-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .copy-btn {
+        align-self: flex-end;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <a href="#" class="logo-badge">
+        <svg class="pixel-sun" viewBox="0 0 16 16" fill="currentColor">
+          <rect x="7" y="1" width="2" height="2" fill="#f59e0b"/>
+          <rect x="2" y="3" width="2" height="2" fill="#f59e0b"/>
+          <rect x="12" y="3" width="2" height="2" fill="#f59e0b"/>
+          <rect x="6" y="5" width="4" height="4" fill="#f59e0b"/>
+          <rect x="1" y="10" width="14" height="2" fill="#ffffff"/>
+          <rect x="3" y="12" width="10" height="2" fill="#71717a"/>
+        </svg>
+        FIRSTLIGHT
+      </a>
+      <div class="header-links">
+        <a href="https://github.com/daksh-mor/firstlight" target="_blank" rel="noreferrer">github ↗</a>
+        <a href="https://dakshmor.in" target="_blank" rel="noreferrer">dakshmor.in ↗</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main>
+      <div class="pill">macOS · native swift · keyboard-only</div>
+      <h1>what's next?</h1>
+      <p class="hero-desc">
+        A distraction-free app that sits on your Mac and shows your last unfinished task in big white text on a black screen. Mark it done. Type the next thing. Keep going.
+      </p>
+
+      <!-- Live Interactive Demo -->
+      <div class="app-screen" id="demoScreen" title="Click to interact with the demo">
+        <div class="app-screen-label">LIVE DEMO · TRY TYPING</div>
+        <div class="task-display">
+          <span class="task-prefix">&gt;</span>
+          <span class="task-text" id="taskText" contenteditable="true" spellcheck="false">ship firstlight</span><span class="cursor"></span>
+        </div>
+        <div class="screen-footer">
+          <div class="screen-keys">
+            <span>enter</span> done &nbsp;&middot;&nbsp; <span>esc</span> hide &nbsp;&middot;&nbsp; <span>cmd+g</span> timeline
+          </div>
+          <div class="screen-hint" id="screenHint">press enter to mark done</div>
+        </div>
+      </div>
+
+      <!-- Quick Install -->
+      <div class="section-title">install</div>
+
+      <!-- Homebrew -->
+      <div class="install-box">
+        <code class="install-cmd">brew tap daksh-mor/firstlight && brew install --cask firstlight</code>
+        <button class="copy-btn" data-copy="brew tap daksh-mor/firstlight && brew install --cask firstlight">copy</button>
+      </div>
+
+      <!-- One-liner curl -->
+      <div class="install-box">
+        <code class="install-cmd">curl -sL https://raw.githubusercontent.com/daksh-mor/firstlight/main/install.sh | bash</code>
+        <button class="copy-btn" data-copy="curl -sL https://raw.githubusercontent.com/daksh-mor/firstlight/main/install.sh | bash">copy</button>
+      </div>
+
+      <div class="download-row">
+        <a href="https://github.com/daksh-mor/firstlight/releases/latest" class="pixel-btn" target="_blank" rel="noreferrer">
+          <span>↓</span> download .zip (arm64)
+        </a>
+        <a href="https://github.com/daksh-mor/firstlight" class="pixel-btn pixel-btn-secondary" target="_blank" rel="noreferrer">
+          view source code
+        </a>
+      </div>
+
+      <!-- Principles -->
+      <div class="section-title">philosophy</div>
+      <div class="pillars">
+        <div class="pillar-card">
+          <div class="pillar-num">01 / SINGLE FOCUS</div>
+          <div class="pillar-title">One task. No backlogs.</div>
+          <div class="pillar-body">
+            Productivity apps drown you in tags, priority matrices, and lists of 80 things you haven't done. FirstLight only ever shows you the one thing you need to do right now.
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">02 / WAKES WHEN YOU WAKE</div>
+          <div class="pillar-title">Always there, never in the way.</div>
+          <div class="pillar-body">
+            Opens automatically when you log in or wake your Mac from sleep. It greets you when you're ready, without you remembering to open it. Press escape anytime to hide it.
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-num">03 / ZERO CLOUD</div>
+          <div class="pillar-title">Plain markdown on your Desktop.</div>
+          <div class="pillar-body">
+            Everything lives in <code>~/Desktop/FirstLight/tasks.md</code>. Obsidian-friendly, fully editable in any text editor, zero telemetry, zero servers, 100% offline forever.
+          </div>
+        </div>
+      </div>
+
+      <!-- Shortcuts -->
+      <div class="section-title">keyboard controls</div>
+      <table class="shortcuts-table">
+        <thead>
+          <tr>
+            <th>you press</th>
+            <th>what happens</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>type any letters</td>
+            <td>write your next task</td>
+          </tr>
+          <tr>
+            <td>enter / d</td>
+            <td>mark task done and prompt for the next</td>
+          </tr>
+          <tr>
+            <td>esc</td>
+            <td>skip / hide window (stays in background)</td>
+          </tr>
+          <tr>
+            <td>cmd + g</td>
+            <td>open the task timeline replay</td>
+          </tr>
+          <tr>
+            <td>space (in timeline)</td>
+            <td>play / pause timeline animation</td>
+          </tr>
+          <tr>
+            <td>cmd + q</td>
+            <td>quit FirstLight</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div>built by <a href="https://dakshmor.in" target="_blank" rel="noreferrer">Daksh Mor</a> &middot; free & open source</div>
+      <div><a href="https://github.com/daksh-mor/firstlight/blob/main/LICENSE" target="_blank" rel="noreferrer">MIT License</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Interactive demo script
+    const taskEl = document.getElementById('taskText');
+    const hintEl = document.getElementById('screenHint');
+    const demoScreen = document.getElementById('demoScreen');
+
+    const sampleTasks = [
+      "review pr #42",
+      "write neural net from scratch",
+      "call mom",
+      "deploy firstlight",
+      "make coffee"
+    ];
+    let sampleIdx = 0;
+    let isDone = false;
+
+    demoScreen.addEventListener('click', () => {
+      taskEl.focus();
+    });
+
+    taskEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (!isDone) {
+          isDone = true;
+          taskEl.classList.add('done');
+          hintEl.textContent = "done! press enter for next task";
+        } else {
+          isDone = false;
+          taskEl.classList.remove('done');
+          taskEl.textContent = sampleTasks[sampleIdx % sampleTasks.length];
+          sampleIdx++;
+          hintEl.textContent = "press enter to mark done";
+          // Move cursor to end
+          const range = document.createRange();
+          const sel = window.getSelection();
+          range.selectNodeContents(taskEl);
+          range.collapse(false);
+          sel.removeAllRanges();
+          sel.addRange(range);
+        }
+      }
+    });
+
+    // Copy command buttons
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const text = btn.getAttribute('data-copy');
+        try {
+          await navigator.clipboard.writeText(text);
+          const originalText = btn.textContent;
+          btn.textContent = 'copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = originalText;
+            btn.classList.remove('copied');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy: ', err);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

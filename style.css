@@ -358,7 +358,7 @@ a {
     color: var(--sky);
 }
 
-/* Hover Detail Popover Card — Opens Floating Above Node */
+/* Hover Detail Popover Card - Opens Floating Above Node */
 .exp-node-popover {
     position: absolute;
     bottom: 195px;
@@ -602,7 +602,7 @@ a {
     border-color: rgba(74, 144, 226, 0.4);
 }
 
-/* Card Header Container — Prevents Overlaps */
+/* Card Header Container - Prevents Overlaps */
 .project-card-header {
     display: flex;
     align-items: flex-start;
@@ -628,7 +628,7 @@ a {
     flex-shrink: 0;
 }
 
-/* Category Badges — Appears ONLY on Hover */
+/* Category Badges - Appears ONLY on Hover */
 .project-category-badge {
     position: relative;
     top: auto;

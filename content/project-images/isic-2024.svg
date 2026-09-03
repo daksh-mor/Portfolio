@@ -24,6 +24,6 @@
   </g>
 
   <!-- Title Text -->
-  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">ISIC 2024 — SKIN CANCER AI</text>
+  <text x="400" y="385" font-family="'Courier New', monospace" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle" letter-spacing="2">ISIC 2024 - SKIN CANCER AI</text>
   <line x1="260" y1="398" x2="540" y2="398" stroke="#1976D2" stroke-width="2" stroke-linecap="round"/>
 </svg>
