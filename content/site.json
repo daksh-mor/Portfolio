@@ -1005,11 +1005,7 @@
     "skills": {
       "Languages": [
         "Python",
-        "C/C++",
-        "JavaScript",
-        "Swift",
-        "GDScript",
-        "SQL"
+        "C/C++"
       ],
       "ML / AI": [
         "PyTorch",
@@ -1018,44 +1014,24 @@
         "LightGBM",
         "Optuna",
         "LangGraph",
-        "RAG",
-        "Multi-agent systems",
-        "Vision Transformers (ViT, DINOv2)",
-        "Sparse autoencoders / interpretability",
-        "RAGAS evaluation"
+        "RAG"
       ],
-      "Software / Systems": [
+      "SDE / Systems": [
         "FastAPI",
         "Docker",
         "Kafka",
         "Pathway",
         "MCP",
-        "React",
-        "Node.js",
-        "VS Code extensions",
-        "AppKit (macOS)",
-        "Godot"
+        "VS Code extensions"
       ],
       "Quant / Data": [
         "NumPy",
         "Pandas",
-        "Probability & statistics",
-        "Time series",
-        "Portfolio analytics",
-        "Streaming market data"
+        "Time series"
       ],
-      "CS Fundamentals": [
-        "Data structures & algorithms (600+ problems, Codeforces Specialist 1419)",
-        "Operating systems",
-        "Computer networks",
-        "DBMS",
-        "Compilers"
-      ],
-      "Tools": [
-        "Git/GitHub",
-        "VS Code",
-        "Kaggle",
-        "Linux"
+      "CS Basics": [
+        "DSA (600+ problems)",
+        "Competitive programming"
       ]
     },
     "positions": [

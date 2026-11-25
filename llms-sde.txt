@@ -71,12 +71,11 @@ Investigated mechanistic interpretability in LLMs via gradient ascent on sparse 
 - Proposed and investigated a novel approach for mechanistic interpretability in LLMs by reverse engineering internal representations and using gradient ascent in sparse autoencoders to extract monosemantic features.
 
 ## Skills
-- Languages: Python, C/C++, JavaScript, Swift, GDScript, SQL
-- ML / AI: PyTorch, Transformers, Scikit-learn, LightGBM, Optuna, LangGraph, RAG, Multi-agent systems, Vision Transformers (ViT, DINOv2), Sparse autoencoders / interpretability, RAGAS evaluation
-- Software / Systems: FastAPI, Docker, Kafka, Pathway, MCP, React, Node.js, VS Code extensions, AppKit (macOS), Godot
-- Quant / Data: NumPy, Pandas, Probability & statistics, Time series, Portfolio analytics, Streaming market data
-- CS Fundamentals: Data structures & algorithms (600+ problems, Codeforces Specialist 1419), Operating systems, Computer networks, DBMS, Compilers
-- Tools: Git/GitHub, VS Code, Kaggle, Linux
+- Languages: Python, C/C++
+- ML / AI: PyTorch, Transformers, Scikit-learn, LightGBM, Optuna, LangGraph, RAG
+- SDE / Systems: FastAPI, Docker, Kafka, Pathway, MCP, VS Code extensions
+- Quant / Data: NumPy, Pandas, Time series
+- CS Basics: DSA (600+ problems), Competitive programming
 
 ## Achievements
 - GATE AIR 362 in Data Science & Artificial Intelligence: Secured AIR 362 among 70,000+ candidates appearing (90k+ registered) in national GATE DA examination
