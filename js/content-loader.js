@@ -590,9 +590,44 @@
 
         copyBtn.innerHTML = GITHUB_COPY_SVG;
 
-        copyBtn.addEventListener("click", function () {
-            var markdownText = buildAgentMarkdown(data);
-            copyTextToClipboard(markdownText, "Copied context of website to clipboard", copyBtn);
+        var options = [
+            ["Full profile", "llms.txt"],
+            ["For SDE roles", "llms-sde.txt"],
+            ["For ML roles", "llms-ml.txt"],
+            ["For Quant roles", "llms-quant.txt"]
+        ];
+        var texts = {};
+        options.forEach(function (o) {
+            fetch(o[1] + "?t=" + Date.now(), { cache: "no-store" })
+                .then(function (r) { return r.ok ? r.text() : ""; })
+                .then(function (t) { texts[o[1]] = t; })
+                .catch(function () {});
+        });
+
+        var li = copyBtn.parentNode;
+        li.classList.add("copy-menu-wrap");
+        var menu = document.createElement("div");
+        menu.className = "copy-menu";
+        options.forEach(function (o) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.textContent = o[0];
+            b.addEventListener("click", function (e) {
+                e.stopPropagation();
+                menu.classList.remove("open");
+                var text = texts[o[1]] || buildAgentMarkdown(data);
+                copyTextToClipboard(text, "Copied " + o[0].toLowerCase() + " for AI", copyBtn);
+            });
+            menu.appendChild(b);
+        });
+        li.appendChild(menu);
+
+        copyBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            menu.classList.toggle("open");
+        });
+        document.addEventListener("click", function () {
+            menu.classList.remove("open");
         });
     }
 
