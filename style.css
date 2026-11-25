@@ -1277,3 +1277,52 @@ a {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+.ai-profile {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.copy-menu-wrap {
+    position: relative;
+}
+
+.copy-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 170px;
+    padding: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    display: none;
+    flex-direction: column;
+    z-index: 1001;
+}
+
+.copy-menu.open {
+    display: flex;
+}
+
+.copy-menu button {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 8px 10px;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.copy-menu button:hover {
+    background: var(--code-bg);
+    color: var(--sky);
+}

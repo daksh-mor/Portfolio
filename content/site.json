@@ -25,19 +25,33 @@
       "company": "Microsoft",
       "role": "Software Engineer Intern (MSRC Onsite)",
       "period": "May 2026 - Jul 2026",
-      "summary": "Designed & shipped an agentic security VS Code extension combining LLMs with deterministic validation to automate security workflows."
+      "summary": "Designed & shipped an agentic security VS Code extension combining LLMs with deterministic validation to automate security workflows.",
+      "location": "Hyderabad, India",
+      "details": [
+        "Designed and shipped a VS Code extension to automate an internal security workflow, saving 11+ hours/month.",
+        "Built a self-correcting execution pipeline where AI-generated code was compiled, deterministically validated, and automatically repaired across multiple retries before user review."
+      ]
     },
     {
       "company": "Google Summer of Code (GSoC)",
       "role": "Open Source Contributor (ML4DQM Remote)",
       "period": "May 2025 - Jul 2025",
-      "summary": "Built a continual learning ViT framework with conv adapters for CERN CMS HCAL anomaly detection, cutting parameters by 60% with zero accuracy loss."
+      "summary": "Built a continual learning ViT framework with conv adapters for CERN CMS HCAL anomaly detection, cutting parameters by 60% with zero accuracy loss.",
+      "location": "Remote",
+      "details": [
+        "Designed a continual learning framework for CERN CMS HCAL anomaly detection using a frozen ViT with trainable convolutional adapters, cutting trainable parameters by 60% with no accuracy loss.",
+        "Submitted a NeurIPS workshop paper as part of the work (ML4SCI)."
+      ]
     },
     {
       "company": "National University of Singapore (NUS)",
       "role": "Research Intern (Hybrid)",
       "period": "May 2025 - Jul 2025",
-      "summary": "Investigated mechanistic interpretability in LLMs via gradient ascent on sparse autoencoders to isolate monosemantic internal representations."
+      "summary": "Investigated mechanistic interpretability in LLMs via gradient ascent on sparse autoencoders to isolate monosemantic internal representations.",
+      "location": "Remote / Hybrid",
+      "details": [
+        "Proposed and investigated a novel approach for mechanistic interpretability in LLMs by reverse engineering internal representations and using gradient ascent in sparse autoencoders to extract monosemantic features."
+      ]
     }
   ],
   "social": [
@@ -142,7 +156,12 @@
       "link": "https://github.com/daksh-mor/firstlight",
       "liveUrl": "https://firstlight.dakshmor.in",
       "liveLabel": "Website",
-      "tags": ["macOS", "Swift", "Minimalist", "Open Source"],
+      "tags": [
+        "macOS",
+        "Swift",
+        "Minimalist",
+        "Open Source"
+      ],
       "roleBreakdown": {
         "sde": "Engineered native macOS utility in Swift (AppKit) with LaunchAgent daemon integration for auto-wake on system login and sleep resumption; implemented atomic zero-cloud file I/O continuously synchronizing state to local ~/Desktop/FirstLight/tasks.md with zero external dependencies; packaged for distribution via Homebrew Cask and automated shell installers.",
         "ml": "Modeled a single-state cognitive task queue eliminating cognitive overload and context switching; structured sequential state persistence to facilitate personal time-series focus analysis and markdown-based task extraction.",
@@ -165,7 +184,11 @@
       "liveLabel": "Play Game",
       "itchUrl": "https://daksh-mor.itch.io/boomboom",
       "itchLabel": "itch.io",
-      "tags": ["3D WebGL", "LAN Multiplayer", "Godot / JS"],
+      "tags": [
+        "3D WebGL",
+        "LAN Multiplayer",
+        "Godot / JS"
+      ],
       "roleBreakdown": {
         "sde": "Engineered zero-server 3D WebGL architecture in Godot 4 & JS; implemented real-time 2D-to-3D stroke mesh generation algorithms converting freehand canvas doodles into collision-enabled 3D terrain; deployed P2P WebSocket mesh for low-latency LAN multiplayer synchronization.",
         "ml": "Developed stroke path vector normalization and generative doodle classification heuristics to parse freehand user inputs into dynamic 3D game props in real time.",
@@ -186,7 +209,11 @@
       "link": "https://github.com/daksh-mor/Stackd",
       "liveUrl": "https://poker.dakshmor.in",
       "liveLabel": "Live App",
-      "tags": ["Offline-First", "Web App", "Utility UI"],
+      "tags": [
+        "Offline-First",
+        "Web App",
+        "Utility UI"
+      ],
       "roleBreakdown": {
         "sde": "Built 100% offline Progressive Web Application (PWA) with zero network requests; implemented atomic local storage state persistence and responsive gesture-based UI for table-top phone orientation.",
         "ml": "Designed rule-based heuristic engine for automated pot resolution and dynamic blind structure generation.",
@@ -209,7 +236,11 @@
       "liveLabel": "Live App",
       "itchUrl": "https://daksh-mor.itch.io/sham",
       "itchLabel": "itch.io",
-      "tags": ["Local P2P", "Audio Stream", "Party Game"],
+      "tags": [
+        "Local P2P",
+        "Audio Stream",
+        "Party Game"
+      ],
       "roleBreakdown": {
         "sde": "Constructed peer-to-peer local Wi-Fi audio streaming pipeline using Web Audio API and WebSockets; indexed local device audio metadata with zero cloud storage dependency.",
         "ml": "Implemented dynamic spectrogram audio chunking and dynamic difficulty scoring based on song acoustic variance.",
@@ -232,7 +263,11 @@
       "liveLabel": "Website & APK",
       "itchUrl": "https://daksh-mor.itch.io/valu",
       "itchLabel": "itch.io",
-      "tags": ["Godot 4.7", "Android & Desktop", "FPS"],
+      "tags": [
+        "Godot 4.7",
+        "Android & Desktop",
+        "FPS"
+      ],
       "roleBreakdown": {
         "sde": "Architected cross-platform Godot 4.7.1 engine codebase in C# & GDScript for Android APK & Desktop binaries; implemented UDP local subnet auto-discovery for zero-config multiplayer rooms.",
         "ml": "Integrated spatial bot pathfinding algorithms with adaptive tactical positioning state evaluation.",
@@ -251,7 +286,11 @@
       "imageAlt": "IntelliDesk AI Support",
       "linkLabel": "Live Demo",
       "link": "https://intellidesk-wheat.vercel.app/",
-      "tags": ["LLM Agents", "B2B SaaS", "Email Automation"],
+      "tags": [
+        "LLM Agents",
+        "B2B SaaS",
+        "Email Automation"
+      ],
       "roleBreakdown": {
         "sde": "Built full-stack B2B SaaS architecture using Next.js, PostgreSQL/Supabase, and webhook email ingestion pipelines; implemented role-based ticket routing and SLA tracking dashboards.",
         "ml": "Orchestrated autonomous LLM agent workflow for ticket categorization, semantic vector retrieval (RAG) over knowledge bases, and duplicate thread detection.",
@@ -270,7 +309,11 @@
       "imageAlt": "WhiteBox AI Financial Analyst",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/whintyr/whitebox",
-      "tags": ["Multi-Agent AI", "Quantitative Finance", "Inter IIT 14.0"],
+      "tags": [
+        "Multi-Agent AI",
+        "Quantitative Finance",
+        "Inter IIT 14.0"
+      ],
       "roleBreakdown": {
         "sde": "Engineered streaming-native financial data pipeline using Kafka, Pathway, and Docker; built dual-layer memory with DocumentStore for RAG over SEC filings and news.",
         "ml": "Orchestrated multi-agent LangGraph workflow featuring specialized sub-agents, semantic reranking, and contextual enrichment (achieved 88.3% tool selection accuracy & +21% precision).",
@@ -289,7 +332,11 @@
       "imageAlt": "ChoreoAI Text to Dance",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/ChoreoAI",
-      "tags": ["Motion Capture", "Multimodal AI", "PyTorch"],
+      "tags": [
+        "Motion Capture",
+        "Multimodal AI",
+        "PyTorch"
+      ],
       "roleBreakdown": {
         "sde": "Built 3D motion-capture dataset extraction and normalization pipeline in PyTorch; developed WebGL skeleton rendering interface for dynamic sequence playback.",
         "ml": "Trained semi-supervised VAE autoencoder and text-conditioned generative model to synthesize 3D skeletal joint movements from natural language prompts.",
@@ -310,7 +357,11 @@
       "link": "https://github.com/ayushgit12/batman",
       "liveUrl": "https://batman-phi.vercel.app/",
       "liveLabel": "Live Demo",
-      "tags": ["FinTech UI", "Portfolio Analytics", "AI"],
+      "tags": [
+        "FinTech UI",
+        "Portfolio Analytics",
+        "AI"
+      ],
       "roleBreakdown": {
         "sde": "Developed responsive FinTech Web UI in React with REST API integration, secure user authentication, and client-side data caching.",
         "ml": "Integrated conversational LLM agent to translate complex financial jargon and SEC disclosures into plain-English summaries.",
@@ -329,7 +380,11 @@
       "imageAlt": "Blog Posting Autonomous Agent",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/Blog-agent",
-      "tags": ["Mistral-7B", "Autonomous Agents", "Python"],
+      "tags": [
+        "Mistral-7B",
+        "Autonomous Agents",
+        "Python"
+      ],
       "roleBreakdown": {
         "sde": "Built automated web scraping pipeline and Blogger REST API integration with scheduled cron execution and logging.",
         "ml": "Fine-tuned Mistral-7B prompt templates for automated news summarization, click-worthy headline generation, and content deduplication.",
@@ -348,7 +403,11 @@
       "imageAlt": "EcoPolis Urban Biodiversity Planner",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/devrajbando/EcoPolis-Agglo",
-      "tags": ["GIS & Spatial ML", "Urban Tech", "React"],
+      "tags": [
+        "GIS & Spatial ML",
+        "Urban Tech",
+        "React"
+      ],
       "roleBreakdown": {
         "sde": "Constructed interactive GIS Web map UI in React; parsed GeoJSON spatial datasets with client-side layer toggling and heatmaps.",
         "ml": "Trained spatial habitat suitability classifier combining satellite imagery and ecological features for land zoning recommendation.",
@@ -367,7 +426,11 @@
       "imageAlt": "DreamTeam Cricket Fantasy AI",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/Green-Kedia/DreamTeam",
-      "tags": ["Transformers & LSTMs", "SHAP + GPT-4", "Sports ML"],
+      "tags": [
+        "Transformers & LSTMs",
+        "SHAP + GPT-4",
+        "Sports ML"
+      ],
       "roleBreakdown": {
         "sde": "Built automated data ingestion scripts and feature store pipeline in Python; structured modular model evaluation harness for automated benchmarking.",
         "ml": "Benchmarked LightGBM, LSTMs, and Transformer models (+27% accuracy improvement over baseline); integrated SHAP feature attribution with GPT-4 for natural language explanations.",
@@ -388,7 +451,11 @@
       "link": "https://github.com/Green-Kedia/AI_OF_GOD_3.0",
       "liveUrl": "https://www.kaggle.com/competitions/ai-of-god-3/overview",
       "liveLabel": "Kaggle Competition",
-      "tags": ["3rd Place Award", "Computer Vision", "Kaggle"],
+      "tags": [
+        "3rd Place Award",
+        "Computer Vision",
+        "Kaggle"
+      ],
       "roleBreakdown": {
         "sde": "Engineered synthetic document rendering engine generating 50,000+ augmented text images; built distributed PyTorch model training CLI.",
         "ml": "Fine-tuned Vision-Encoder-Decoder TrOCR (frozen LayerNorm) combined with BERT-based linguistic post-processing, reducing Word Error Rate (WER) from 0.280 to 0.221 (21% relative gain).",
@@ -407,7 +474,11 @@
       "imageAlt": "Adobe Behaviour Simulation",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/malevolentshryne/Adobe_Behaviour_Simulation",
-      "tags": ["Predictive ML", "Marketing Analytics", "Feature Engineering"],
+      "tags": [
+        "Predictive ML",
+        "Marketing Analytics",
+        "Feature Engineering"
+      ],
       "roleBreakdown": {
         "sde": "Constructed automated data cleaning, transformation, and feature extraction pipeline in Python & Pandas; structured modular Scikit-learn feature store.",
         "ml": "Trained Gradient Boosting and Random Forest models for continuous engagement score prediction; tuned hyperparameters using Optuna cross-validation.",
@@ -428,7 +499,11 @@
       "link": "https://github.com/daksh-mor/ISIC2024",
       "liveUrl": "https://www.kaggle.com/competitions/isic-2024-challenge",
       "liveLabel": "Kaggle Competition",
-      "tags": ["DINOv2", "Medical AI", "Computer Vision"],
+      "tags": [
+        "DINOv2",
+        "Medical AI",
+        "Computer Vision"
+      ],
       "roleBreakdown": {
         "sde": "Built high-throughput GPU data loading pipeline handling 400,000+ 3D total body image crops from SLICE-3D dataset; automated Kaggle submission pipeline.",
         "ml": "Fine-tuned DINOv2 vision transformer and stacked CNN predictions (EfficientNet, ResNet, DenseNet) with LightGBM using triple stratified group K-fold cross-validation.",
@@ -447,7 +522,11 @@
       "imageAlt": "ML Algorithms from Scratch",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/WOC-6.0-ML-Bootcamp",
-      "tags": ["From Scratch", "Deep Learning", "Transformers"],
+      "tags": [
+        "From Scratch",
+        "Deep Learning",
+        "Transformers"
+      ],
       "roleBreakdown": {
         "sde": "Implemented 7 machine learning algorithms in pure Python using zero external ML libraries (NumPy only), adhering to strict Object-Oriented software design patterns.",
         "ml": "Wrote custom matrix vectorization, gradient descent optimization, backpropagation derivatives, and Transformer multi-head self-attention math from first principles.",
@@ -466,12 +545,567 @@
       "imageAlt": "Thunder Discord Bot",
       "linkLabel": "GitHub Repo",
       "link": "https://github.com/daksh-mor/thunder3982-discord-bot",
-      "tags": ["Node.js / Python", "Discord API", "Automation"],
+      "tags": [
+        "Node.js / Python",
+        "Discord API",
+        "Automation"
+      ],
       "roleBreakdown": {
         "sde": "Developed event-driven Discord API bot in Node.js & Python; implemented command routing, SQLite database persistence, and automated moderation actions.",
         "ml": "Integrated basic NLP text sentiment analysis to flag toxic server messages automatically.",
         "quant": "Tracked user activity time-series data, channel message velocity, and engagement growth metrics."
       }
     }
-  ]
+  ],
+  "profile": {
+    "personal": {
+      "fullName": "Daksh Mor",
+      "email": "daksh3982@gmail.com",
+      "phone": "+91-9350114220",
+      "website": "https://dakshmor.in",
+      "linkedin": "https://linkedin.com/in/daksh-mor",
+      "github": "https://github.com/daksh-mor",
+      "nationality": "Indian",
+      "workAuthorization": "Indian citizen; authorized to work in India",
+      "currentLocation": "Dhanbad, Jharkhand, India (IIT Dhanbad campus)"
+    },
+    "education": {
+      "college": {
+        "institute": "Indian Institute of Technology (Indian School of Mines), Dhanbad",
+        "degree": "Bachelor of Technology (B.Tech)",
+        "branch": "Computer Science and Engineering",
+        "admissionNumber": "23JE0286",
+        "admitted": "Aug 2023",
+        "expectedGraduation": "May 2027",
+        "currentSemester": 7,
+        "cgpa": "9.12/10 (after Semester 6)",
+        "admissionVia": "JEE Advanced 2023",
+        "semesters": [
+          {
+            "semester": 1,
+            "session": "Monsoon 2023-24",
+            "sgpa": 8.69,
+            "cgpa": 8.69,
+            "courses": [
+              {
+                "code": "MSI101",
+                "name": "Engineering Economics and Finance",
+                "credits": 6,
+                "grade": "A+",
+                "area": "quant"
+              },
+              {
+                "code": "CEI101",
+                "name": "Engineering Graphics",
+                "credits": 6,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "MEI101",
+                "name": "Engineering Mechanics",
+                "credits": 11,
+                "grade": "B+",
+                "area": "other"
+              },
+              {
+                "code": "MCI101",
+                "name": "Mathematics - I",
+                "credits": 11,
+                "grade": "A",
+                "area": "math"
+              },
+              {
+                "code": "PHI101",
+                "name": "Physics",
+                "credits": 9,
+                "grade": "B+",
+                "area": "other"
+              },
+              {
+                "code": "EEI101",
+                "name": "Basics of Electrical Engineering",
+                "credits": 4.5,
+                "grade": "B+",
+                "area": "other"
+              },
+              {
+                "code": "ECI101",
+                "name": "Basics of Electronics Engineering",
+                "credits": 4.5,
+                "grade": "B+",
+                "area": "other"
+              },
+              {
+                "code": "EEI102",
+                "name": "Electrical Engineering Lab",
+                "credits": 1.5,
+                "grade": "A+",
+                "area": "lab"
+              },
+              {
+                "code": "ECI102",
+                "name": "Electronics Engineering Lab",
+                "credits": 1.5,
+                "grade": "A",
+                "area": "lab"
+              },
+              {
+                "code": "CCS101",
+                "name": "Co-Curricular Activity - I",
+                "credits": 0,
+                "grade": "S",
+                "area": "other"
+              },
+              {
+                "code": "PHI102",
+                "name": "Physics Lab",
+                "credits": 2,
+                "grade": "B+",
+                "area": "lab"
+              }
+            ]
+          },
+          {
+            "semester": 2,
+            "session": "Winter 2023-24",
+            "sgpa": 9.46,
+            "cgpa": 9.06,
+            "courses": [
+              {
+                "code": "CYI101",
+                "name": "Chemistry",
+                "credits": 9,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "HSI101",
+                "name": "Communication Skills",
+                "credits": 5,
+                "grade": "A",
+                "area": "other"
+              },
+              {
+                "code": "MEI102",
+                "name": "Manufacturing Processes",
+                "credits": 9,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "MCI102",
+                "name": "Mathematics - II",
+                "credits": 11,
+                "grade": "A",
+                "area": "math"
+              },
+              {
+                "code": "CSI101",
+                "name": "Computer Programming",
+                "credits": 4,
+                "grade": "A+",
+                "area": "cs"
+              },
+              {
+                "code": "CSI102",
+                "name": "Computer Programming Lab",
+                "credits": 1,
+                "grade": "A+",
+                "area": "lab"
+              },
+              {
+                "code": "GLI101",
+                "name": "Earth Sciences",
+                "credits": 3,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "ESI101",
+                "name": "Environmental Sciences",
+                "credits": 3,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "MCI103",
+                "name": "Numerical Methods",
+                "credits": 5,
+                "grade": "B+",
+                "area": "math"
+              },
+              {
+                "code": "CCS102",
+                "name": "Co-Curricular Activity - II",
+                "credits": 0,
+                "grade": "S",
+                "area": "other"
+              },
+              {
+                "code": "CYI102",
+                "name": "Chemistry Lab",
+                "credits": 2,
+                "grade": "A",
+                "area": "lab"
+              }
+            ]
+          },
+          {
+            "semester": 3,
+            "session": "Monsoon 2024-25",
+            "sgpa": 9.04,
+            "cgpa": 9.05,
+            "courses": [
+              {
+                "code": "CSC203",
+                "name": "Computer Organization",
+                "credits": 9,
+                "grade": "A",
+                "area": "systems"
+              },
+              {
+                "code": "CSC201",
+                "name": "Data Structures",
+                "credits": 9,
+                "grade": "A+",
+                "area": "cs"
+              },
+              {
+                "code": "CSC202",
+                "name": "Discrete Mathematics",
+                "credits": 9,
+                "grade": "A",
+                "area": "math"
+              },
+              {
+                "code": "MCC505",
+                "name": "Probability & Statistics",
+                "credits": 9,
+                "grade": "A",
+                "area": "math"
+              },
+              {
+                "code": "EEE202",
+                "name": "Utilization of Electrical Energy",
+                "credits": 9,
+                "grade": "B+",
+                "area": "other"
+              },
+              {
+                "code": "CSC205",
+                "name": "Computer Organization Lab",
+                "credits": 2,
+                "grade": "A",
+                "area": "lab"
+              },
+              {
+                "code": "CSC204",
+                "name": "Data Structures Lab",
+                "credits": 2,
+                "grade": "A+",
+                "area": "lab"
+              }
+            ]
+          },
+          {
+            "semester": 4,
+            "session": "Winter 2024-25",
+            "sgpa": 9.45,
+            "cgpa": 9.15,
+            "courses": [
+              {
+                "code": "CSC206",
+                "name": "Algorithm Design & Analysis",
+                "credits": 9,
+                "grade": "A+",
+                "area": "cs"
+              },
+              {
+                "code": "CSC207",
+                "name": "Computer Architecture",
+                "credits": 9,
+                "grade": "A",
+                "area": "systems"
+              },
+              {
+                "code": "CSE202",
+                "name": "Object Oriented Programming",
+                "credits": 9,
+                "grade": "A",
+                "area": "cs"
+              },
+              {
+                "code": "CSC209",
+                "name": "Operating Systems",
+                "credits": 9,
+                "grade": "A+",
+                "area": "systems"
+              },
+              {
+                "code": "CSC208",
+                "name": "Theory of Computation",
+                "credits": 9,
+                "grade": "A",
+                "area": "cs"
+              },
+              {
+                "code": "CSC210",
+                "name": "Algorithm Design & Analysis Lab",
+                "credits": 2,
+                "grade": "A+",
+                "area": "lab"
+              },
+              {
+                "code": "CSC211",
+                "name": "Operating Systems Lab",
+                "credits": 2,
+                "grade": "A+",
+                "area": "lab"
+              }
+            ]
+          },
+          {
+            "semester": 5,
+            "session": "Monsoon 2025-26",
+            "sgpa": 8.96,
+            "cgpa": 9.11,
+            "courses": [
+              {
+                "code": "CSC302",
+                "name": "Compiler Design",
+                "credits": 9,
+                "grade": "A+",
+                "area": "systems"
+              },
+              {
+                "code": "CSC301",
+                "name": "Database Management Systems",
+                "credits": 9,
+                "grade": "B",
+                "area": "systems"
+              },
+              {
+                "code": "MME202",
+                "name": "Mining Machinery",
+                "credits": 9,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "MCO401",
+                "name": "Partial Differential Equations",
+                "credits": 9,
+                "grade": "A",
+                "area": "math"
+              },
+              {
+                "code": "CSO303",
+                "name": "Principles of Artificial Intelligence",
+                "credits": 9,
+                "grade": "A",
+                "area": "ml"
+              },
+              {
+                "code": "CSC304",
+                "name": "Compiler Design Lab",
+                "credits": 2,
+                "grade": "A",
+                "area": "lab"
+              },
+              {
+                "code": "CSC303",
+                "name": "Database Management Systems Lab",
+                "credits": 2,
+                "grade": "B+",
+                "area": "lab"
+              }
+            ]
+          },
+          {
+            "semester": 6,
+            "session": "Winter 2025-26",
+            "sgpa": 9.18,
+            "cgpa": 9.12,
+            "courses": [
+              {
+                "code": "HSO402",
+                "name": "Computational Psychology",
+                "credits": 9,
+                "grade": "A+",
+                "area": "other"
+              },
+              {
+                "code": "CSC305",
+                "name": "Computer Networks",
+                "credits": 9,
+                "grade": "B+",
+                "area": "systems"
+              },
+              {
+                "code": "MSO402",
+                "name": "Introduction to Financial Management",
+                "credits": 9,
+                "grade": "A",
+                "area": "quant"
+              },
+              {
+                "code": "CHD408",
+                "name": "Process Data Analytics",
+                "credits": 9,
+                "grade": "A+",
+                "area": "ml"
+              },
+              {
+                "code": "CSC306",
+                "name": "Software Engineering",
+                "credits": 9,
+                "grade": "A",
+                "area": "cs"
+              },
+              {
+                "code": "CSC307",
+                "name": "Computer Networks Lab",
+                "credits": 2,
+                "grade": "A",
+                "area": "lab"
+              },
+              {
+                "code": "CSC308",
+                "name": "Software Engineering Lab",
+                "credits": 2,
+                "grade": "A",
+                "area": "lab"
+              }
+            ]
+          }
+        ]
+      },
+      "school": [
+        {
+          "level": "Class 12",
+          "score": "~93%"
+        },
+        {
+          "level": "Class 10",
+          "score": "~93%"
+        }
+      ],
+      "exams": [
+        {
+          "exam": "JEE Advanced 2023",
+          "result": "AIR 2877"
+        },
+        {
+          "exam": "GATE Data Science & AI (DA)",
+          "result": "AIR 362 among 70,000+ candidates"
+        }
+      ]
+    },
+    "skills": {
+      "Languages": [
+        "Python",
+        "C/C++",
+        "JavaScript",
+        "Swift",
+        "GDScript",
+        "SQL"
+      ],
+      "ML / AI": [
+        "PyTorch",
+        "Transformers",
+        "Scikit-learn",
+        "LightGBM",
+        "Optuna",
+        "LangGraph",
+        "RAG",
+        "Multi-agent systems",
+        "Vision Transformers (ViT, DINOv2)",
+        "Sparse autoencoders / interpretability",
+        "RAGAS evaluation"
+      ],
+      "Software / Systems": [
+        "FastAPI",
+        "Docker",
+        "Kafka",
+        "Pathway",
+        "MCP",
+        "React",
+        "Node.js",
+        "VS Code extensions",
+        "AppKit (macOS)",
+        "Godot"
+      ],
+      "Quant / Data": [
+        "NumPy",
+        "Pandas",
+        "Probability & statistics",
+        "Time series",
+        "Portfolio analytics",
+        "Streaming market data"
+      ],
+      "CS Fundamentals": [
+        "Data structures & algorithms (600+ problems, Codeforces Specialist 1419)",
+        "Operating systems",
+        "Computer networks",
+        "DBMS",
+        "Compilers"
+      ],
+      "Tools": [
+        "Git/GitHub",
+        "VS Code",
+        "Kaggle",
+        "Linux"
+      ]
+    },
+    "positions": [
+      {
+        "role": "Club Member, Machine Learning Division",
+        "org": "CyberLabs, IIT Dhanbad",
+        "detail": "Organized ML workshops engaging 500+ students."
+      }
+    ],
+    "notOnFile": [
+      "Date of birth",
+      "Home address",
+      "Gender",
+      "School names and boards",
+      "Class 10/12 exact percentages and years"
+    ],
+    "readyAnswers": [
+      {
+        "q": "Tell us about yourself",
+        "sde": "I'm a final-year CSE student at IIT Dhanbad (CGPA 9.12) who has shipped production software at Microsoft, where I built a VS Code extension that automated a security workflow and saved 11+ hours a month. I like building complete systems end to end, from streaming backends like WhiteBox (Kafka, FastAPI, Docker) to small native apps like FirstLight in Swift.",
+        "ml": "I'm a final-year CSE student at IIT Dhanbad (CGPA 9.12, GATE DA AIR 362) working on applied ML and LLM systems. I've done interpretability research at NUS on sparse autoencoders, built a continual-learning ViT framework for CERN CMS in GSoC, won a Kaggle bronze in ISIC 2024, and built multi-agent RAG systems like WhiteBox (5th at Inter IIT).",
+        "quant": "I'm a final-year CSE student at IIT Dhanbad (CGPA 9.12) with a strong math base (probability & statistics, numerical methods, PDEs) and competitive programming background (Codeforces Specialist, 600+ problems). I built WhiteBox, a real-time equity analysis engine over streaming market, news and fundamental data, and I enjoy problems where careful modeling meets fast, correct code."
+      },
+      {
+        "q": "Why are you interested in this role?",
+        "sde": "I enjoy turning ambiguous problems into reliable software that people actually use. At Microsoft I saw how much leverage well-built internal tools create, and I want to keep building systems at that kind of scale and quality.",
+        "ml": "I like ML work that ships: models that are measured honestly, deployed, and improve a real product. My research and competition work taught me rigor; my internships taught me delivery. This role combines both.",
+        "quant": "Markets reward exactly what I enjoy: careful reasoning under uncertainty, clean data, and fast, correct code. Building WhiteBox on live market data made me want to work on these problems seriously."
+      },
+      {
+        "q": "Describe your most challenging project",
+        "sde": "At Microsoft I built a pipeline where AI-generated code was compiled, deterministically validated, and automatically repaired across retries before a user saw it. The hard part was making a non-deterministic LLM produce dependable output; deterministic validation plus bounded retries solved it.",
+        "ml": "In GSoC I built continual learning for CERN CMS HCAL anomaly detection. New data kept arriving, and full retraining caused forgetting. I froze a ViT backbone and trained small convolutional adapters, cutting trainable parameters by 60% with no accuracy loss.",
+        "quant": "WhiteBox at Inter IIT 14.0: a streaming platform ingesting real-time market, news and fundamental data into agents that produce company reports. I improved RAG with reranking and context enrichment and validated it with RAGAS, a 21% precision gain over baseline. We placed 5th."
+      },
+      {
+        "q": "A time you worked in a team / showed leadership",
+        "sde": "",
+        "ml": "",
+        "quant": "",
+        "general": "For WhiteBox at Inter IIT Tech Meet 14.0 I owned the knowledge-base ingestion layer (JSON/PDF/image, FastAPI + MCP) and the fundamental report pipeline, coordinating interfaces with teammates building the agents and streaming layer. We placed 5th. I've also co-organized CyberLabs ML workshops for 500+ students and won 4 hackathons in teams."
+      },
+      {
+        "q": "Strengths",
+        "general": "Fast learner across domains (systems, ML research, finance), strong fundamentals (CGPA 9.12, GATE AIR 362, Codeforces Specialist), and a bias for shipping complete, polished work."
+      },
+      {
+        "q": "Expected graduation / availability",
+        "general": "B.Tech CSE, IIT Dhanbad, graduating May 2027. Available for internships and full-time roles starting mid-2027 (or as the role requires)."
+      }
+    ]
+  }
 }
