@@ -1055,6 +1055,20 @@ a {
     .project-image img {
         height: 200px;
     }
+
+    .experience-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .project-links {
+        flex-wrap: wrap;
+    }
+
+    .experience-list::before {
+        display: none;
+    }
 }
 
 @media (max-width: 520px) {
