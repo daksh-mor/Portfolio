@@ -567,7 +567,9 @@
       "github": "https://github.com/daksh-mor",
       "nationality": "Indian",
       "workAuthorization": "Indian citizen; authorized to work in India",
-      "currentLocation": "Dhanbad, Jharkhand, India (IIT Dhanbad campus)"
+      "currentLocation": "Dhanbad, Jharkhand, India (IIT Dhanbad campus)",
+      "dateOfBirth": "4 May 2005 (04/05/2005, DD/MM/YYYY)",
+      "gender": "Male"
     },
     "education": {
       "college": {
@@ -983,12 +985,14 @@
       },
       "school": [
         {
-          "level": "Class 12",
-          "score": "~93%"
+          "level": "Class 12 (CBSE)",
+          "score": "93.6%",
+          "year": "2023"
         },
         {
-          "level": "Class 10",
-          "score": "~93%"
+          "level": "Class 10 (CBSE)",
+          "score": "93.4%",
+          "year": "2021"
         }
       ],
       "exams": [
@@ -997,7 +1001,7 @@
           "result": "AIR 2877"
         },
         {
-          "exam": "GATE Data Science & AI (DA)",
+          "exam": "GATE 2025 Data Science & AI (DA)",
           "result": "AIR 362 among 70,000+ candidates"
         }
       ]
@@ -1005,11 +1009,7 @@
     "skills": {
       "Languages": [
         "Python",
-        "C/C++",
-        "JavaScript",
-        "Swift",
-        "GDScript",
-        "SQL"
+        "C/C++"
       ],
       "ML / AI": [
         "PyTorch",
@@ -1018,44 +1018,24 @@
         "LightGBM",
         "Optuna",
         "LangGraph",
-        "RAG",
-        "Multi-agent systems",
-        "Vision Transformers (ViT, DINOv2)",
-        "Sparse autoencoders / interpretability",
-        "RAGAS evaluation"
+        "RAG"
       ],
-      "Software / Systems": [
+      "SDE / Systems": [
         "FastAPI",
         "Docker",
         "Kafka",
         "Pathway",
         "MCP",
-        "React",
-        "Node.js",
-        "VS Code extensions",
-        "AppKit (macOS)",
-        "Godot"
+        "VS Code extensions"
       ],
       "Quant / Data": [
         "NumPy",
         "Pandas",
-        "Probability & statistics",
-        "Time series",
-        "Portfolio analytics",
-        "Streaming market data"
+        "Time series"
       ],
-      "CS Fundamentals": [
-        "Data structures & algorithms (600+ problems, Codeforces Specialist 1419)",
-        "Operating systems",
-        "Computer networks",
-        "DBMS",
-        "Compilers"
-      ],
-      "Tools": [
-        "Git/GitHub",
-        "VS Code",
-        "Kaggle",
-        "Linux"
+      "CS Basics": [
+        "DSA (600+ problems)",
+        "Competitive programming"
       ]
     },
     "positions": [
@@ -1066,11 +1046,8 @@
       }
     ],
     "notOnFile": [
-      "Date of birth",
-      "Home address",
-      "Gender",
-      "School names and boards",
-      "Class 10/12 exact percentages and years"
+      "Home address (share only when asked)",
+      "School names"
     ],
     "readyAnswers": [
       {

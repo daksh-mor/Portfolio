@@ -8,6 +8,8 @@ Daksh Mor is a CSE Undergraduate at IIT Dhanbad ('27) and GATE AIR 362 (Data Sci
 
 ## Personal & Contact
 - Full name: Daksh Mor
+- Date of birth: 4 May 2005 (04/05/2005, DD/MM/YYYY)
+- Gender: Male
 - Email: daksh3982@gmail.com
 - Phone: +91-9350114220
 - Current location: Dhanbad, Jharkhand, India (IIT Dhanbad campus)
@@ -48,12 +50,12 @@ Daksh Mor is a CSE Undergraduate at IIT Dhanbad ('27) and GATE AIR 362 (Data Sci
 - Semester 6 (Winter 2025-26), SGPA 9.18, CGPA 9.12: HSO402 Computational Psychology [9 cr] A+; CSC305 Computer Networks [9 cr] B+; MSO402 Introduction to Financial Management [9 cr] A; CHD408 Process Data Analytics [9 cr] A+; CSC306 Software Engineering [9 cr] A; CSC307 Computer Networks Lab [2 cr] A; CSC308 Software Engineering Lab [2 cr] A
 
 ### School
-- Class 12: ~93%
-- Class 10: ~93%
+- Class 12 (CBSE): 93.6% (2023)
+- Class 10 (CBSE): 93.4% (2021)
 
 ### Competitive exams
 - JEE Advanced 2023: AIR 2877
-- GATE Data Science & AI (DA): AIR 362 among 70,000+ candidates
+- GATE 2025 Data Science & AI (DA): AIR 362 among 70,000+ candidates
 
 ## Work Experience
 ### Software Engineer Intern (MSRC Onsite), Microsoft (May 2026 - Jul 2026, Hyderabad, India)
@@ -71,12 +73,11 @@ Investigated mechanistic interpretability in LLMs via gradient ascent on sparse 
 - Proposed and investigated a novel approach for mechanistic interpretability in LLMs by reverse engineering internal representations and using gradient ascent in sparse autoencoders to extract monosemantic features.
 
 ## Skills
-- Languages: Python, C/C++, JavaScript, Swift, GDScript, SQL
-- ML / AI: PyTorch, Transformers, Scikit-learn, LightGBM, Optuna, LangGraph, RAG, Multi-agent systems, Vision Transformers (ViT, DINOv2), Sparse autoencoders / interpretability, RAGAS evaluation
-- Software / Systems: FastAPI, Docker, Kafka, Pathway, MCP, React, Node.js, VS Code extensions, AppKit (macOS), Godot
-- Quant / Data: NumPy, Pandas, Probability & statistics, Time series, Portfolio analytics, Streaming market data
-- CS Fundamentals: Data structures & algorithms (600+ problems, Codeforces Specialist 1419), Operating systems, Computer networks, DBMS, Compilers
-- Tools: Git/GitHub, VS Code, Kaggle, Linux
+- Languages: Python, C/C++
+- ML / AI: PyTorch, Transformers, Scikit-learn, LightGBM, Optuna, LangGraph, RAG
+- SDE / Systems: FastAPI, Docker, Kafka, Pathway, MCP, VS Code extensions
+- Quant / Data: NumPy, Pandas, Time series
+- CS Basics: DSA (600+ problems), Competitive programming
 
 ## Achievements
 - GATE AIR 362 in Data Science & Artificial Intelligence: Secured AIR 362 among 70,000+ candidates appearing (90k+ registered) in national GATE DA examination
@@ -226,4 +227,4 @@ Fast learner across domains (systems, ML research, finance), strong fundamentals
 B.Tech CSE, IIT Dhanbad, graduating May 2027. Available for internships and full-time roles starting mid-2027 (or as the role requires).
 
 ## Not on file (ask Daksh)
-Date of birth, Home address, Gender, School names and boards, Class 10/12 exact percentages and years
+Home address (share only when asked), School names

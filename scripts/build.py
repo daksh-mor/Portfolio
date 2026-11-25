@@ -22,7 +22,7 @@ def build(role=None):
     a("")
 
     a("## Personal & Contact")
-    for k, label in [("fullName", "Full name"), ("email", "Email"), ("phone", "Phone"), ("currentLocation", "Current location"), ("nationality", "Nationality"), ("workAuthorization", "Work authorization"), ("website", "Website"), ("linkedin", "LinkedIn"), ("github", "GitHub")]:
+    for k, label in [("fullName", "Full name"), ("dateOfBirth", "Date of birth"), ("gender", "Gender"), ("email", "Email"), ("phone", "Phone"), ("currentLocation", "Current location"), ("nationality", "Nationality"), ("workAuthorization", "Work authorization"), ("website", "Website"), ("linkedin", "LinkedIn"), ("github", "GitHub")]:
         a(f"- {label}: {P['personal'][k]}")
     for s in d["social"]:
         if s["name"] not in ("GitHub", "LinkedIn"):
@@ -58,7 +58,7 @@ def build(role=None):
     a("")
     a("### School")
     for x in E["school"]:
-        a(f"- {x['level']}: {x['score']}")
+        a(f"- {x['level']}: {x['score']} ({x.get('year', '')})")
     a("")
     a("### Competitive exams")
     for x in E["exams"]:
